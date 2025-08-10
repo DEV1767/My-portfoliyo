@@ -2,7 +2,7 @@
 
 This is my personal **portfolio website** built to showcase my skills, projects, achievements, and experience as a developer.
 
-🌐 **Live Website**: [Click to visit](https://dev1767.github.io/My-portfoliyo/)
+🌐 **Live Website**: [Click to visit](https://shivamportfoliyo.netlify.app/)
 
 ---
 
@@ -47,6 +47,7 @@ Have feedback or want to connect?
 
 🔗 GitHub: @DEV1767
 Made with ❤️ by @DEV1767
+
 
 
 
