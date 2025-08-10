@@ -245,7 +245,9 @@
     overflow-x: hidden;
     margin-top: 10px;
   }
-
+  .con{
+   width: 230px;
+  }
   #pro {
     padding-left: 25px;
     width: auto;
@@ -302,6 +304,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
   }
+
 
 
 
