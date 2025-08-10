@@ -472,7 +472,7 @@ html {
 }
 /*SECTION 6*/
 .section6 {
-    height: 300px;
+    height:auto;
     margin-top: 50px;
     overflow: hidden;
     padding: 30px;
@@ -608,5 +608,6 @@ html {
     outline: none;
     background: transparent;
     cursor: pointer;
+
 
 }
