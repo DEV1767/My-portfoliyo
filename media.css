@@ -216,7 +216,7 @@
     height: 100px;
     padding: 5px;
     gap: 10px;
-    width: 90%;
+    width: 100%;
   }
   .skill{
     width: 230px;
@@ -350,3 +350,4 @@
 
 
 }
+
