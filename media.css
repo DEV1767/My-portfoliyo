@@ -296,6 +296,9 @@
     margin-top: 10px;
     gap: 30px;
   }
+ #visit{
+  margin-top:0px;
+ }
 
   .section6 {
     width: auto;
@@ -348,3 +351,4 @@
 
 
 }
+
