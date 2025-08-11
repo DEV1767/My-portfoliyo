@@ -429,7 +429,7 @@ html {
     gap: 40px;
 }
 .pro1{
-    height:180px;
+    height:auto;
     width: 460px;
     border: 2px solid gray;
     background-color: rgba(128, 128, 128, 0.1);
@@ -681,3 +681,4 @@ html {
     cursor: pointer;
 
 }
+
