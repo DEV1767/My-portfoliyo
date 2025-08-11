@@ -57,7 +57,7 @@
     height: auto;
 }
  .pro2{
-  height:auto;
+  height:180px;
  }
 
 /*for mini tablet 820px*/
@@ -272,7 +272,8 @@
     margin-top: 10px;
   }
   .pro1{
-   height:auto
+   height:auto;
+   width:350px;
   }
   .pro2{
     height:170px;
@@ -353,5 +354,6 @@
 
 
 }
+
 
 
