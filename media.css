@@ -71,6 +71,9 @@
     height: auto;
     width: 55%;
   }
+ .nav-bar span a {
+  font-size:10px:
+ }
 
   .right {
     margin-top: 0px;
@@ -354,6 +357,7 @@
 
 
 }
+
 
 
 
