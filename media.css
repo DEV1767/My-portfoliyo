@@ -201,7 +201,7 @@
   }
 
   .nav-bar p {
-    display: flex;
+    display:none;
     justify-content: space-evenly;
   }
 
@@ -354,6 +354,7 @@
 
 
 }
+
 
 
 
