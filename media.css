@@ -16,21 +16,40 @@
   .hamburger { display: flex; }
   .nav-inner { padding: 0 20px; }
 
-  /* Hero */
+  /* Hero — extra top padding so image clears the 72px navbar */
   .hero {
     flex-direction: column;
-    padding: 100px 20px 80px;
+    padding: 130px 20px 80px;
     text-align: center;
   }
-  .hero-content { flex-direction: column-reverse; align-items: center; gap: 40px; }
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 36px;
+  }
   .hero-text { max-width: 100%; }
   .hero-btns { justify-content: center; }
   .hero-socials { justify-content: center; }
-  .hero-headline { text-align: left; }
 
-  .hero-image-wrap { width: 220px; height: 220px; }
+  /* Headline & desc — center on mobile, smaller font */
+  .hero-headline {
+    text-align: center;
+    font-size: 13px;
+    border-left: none;
+    border-top: 3px solid var(--orange);
+    padding-left: 0;
+    padding-top: 10px;
+  }
+  .hero-desc {
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.7;
+  }
+  .hero-greeting { font-size: 13px; }
 
-  /* Keep badges visible on mobile — repositioned for smaller image */
+  .hero-image-wrap { width: 200px; height: 200px; }
+
+  /* Badges — visible, repositioned for smaller image */
   .badge-node   { bottom: -10px; left: -15px; font-size: 11px; padding: 5px 10px; }
   .badge-python { top: -10px; left: -20px; font-size: 11px; padding: 5px 10px; }
   .badge-mongo  { bottom: 40px; right: -15px; font-size: 11px; padding: 5px 10px; }
@@ -69,17 +88,23 @@
 @media screen and (max-width: 480px) {
   body { overflow-x: hidden; }
 
-  .hero { padding: 90px 16px 60px; }
+  /* More top padding to push image well below navbar */
+  .hero { padding: 110px 16px 60px; }
 
-  /* Slightly smaller name on phones */
-  .hero-name { font-size: 38px; }
-  #a3 { font-size: 18px; }
+  /* Smaller name */
+  .hero-name { font-size: 36px; }
+  .hero-greeting { font-size: 12px; }
+  #a3 { font-size: 17px; }
 
-  /* Keep badges on small mobile — scaled down */
-  .hero-image-wrap { width: 190px; height: 190px; }
+  /* Hero desc & headline compact */
+  .hero-headline { font-size: 12px; padding-top: 8px; }
+  .hero-desc { font-size: 13px; }
+
+  /* Image & badges */
+  .hero-image-wrap { width: 175px; height: 175px; }
   .badge-node   { bottom: -8px; left: -10px; font-size: 10px; padding: 4px 8px; gap: 4px; }
   .badge-python { top: -8px; left: -14px; font-size: 10px; padding: 4px 8px; gap: 4px; }
-  .badge-mongo  { bottom: 36px; right: -10px; font-size: 10px; padding: 4px 8px; gap: 4px; }
+  .badge-mongo  { bottom: 32px; right: -10px; font-size: 10px; padding: 4px 8px; gap: 4px; }
 
   .hero-btns { flex-direction: column; align-items: center; }
   .btn { width: 100%; max-width: 260px; justify-content: center; }
@@ -108,11 +133,11 @@
 
 /* ==================== EXTRA SMALL (max-width: 360px) ==================== */
 @media screen and (max-width: 360px) {
-  .hero-name { font-size: 32px; }
+  .hero-name { font-size: 30px; }
   .section-title { font-size: 24px; }
-  .hero { padding: 80px 12px 50px; }
+  .hero { padding: 100px 12px 50px; }
   .container { padding: 0 12px; }
 
-  /* Badges hidden only on truly tiny screens where they'd overlap */
+  /* Badges hidden only on truly tiny screens to avoid overlap */
   .badge-node, .badge-python, .badge-mongo { display: none; }
 }
