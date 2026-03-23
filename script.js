@@ -55,7 +55,7 @@ window.addEventListener('scroll', updateActiveNav);
 
 /* ==================== TYPING EFFECT ==================== */
 const phrases = [
-  'Backend & Generative AI Developer',
+  'Backend & Generative AI ',
   'Node.js & Express Engineer',
   'MongoDB & API Specialist',
   'Problem Solver & Builder'
