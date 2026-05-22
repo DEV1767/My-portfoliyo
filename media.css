@@ -1,0 +1,162 @@
+/* ==================== TABLET (max-width: 1024px) ==================== */
+@media screen and (max-width: 1024px) {
+  .hero-content { gap: 50px; }
+  .hero-image-wrap { width: 280px; height: 280px; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+  .project-card.featured { grid-column: auto; }
+  .achievements-grid { grid-template-columns: 1fr; gap: 20px; }
+  .nav-links a { padding: 6px 10px; font-size: 12px; }
+}
+
+/* ==================== MOBILE (max-width: 768px) ==================== */
+@media screen and (max-width: 768px) {
+  /* Navbar */
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-inner { padding: 0 20px; }
+
+  /* Hero — optimized mobile layout */
+  .hero {
+    flex-direction: column;
+    padding: 120px 16px 60px;
+    text-align: center;
+    min-height: auto;
+  }
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+  }
+  .hero-text { max-width: 100%; }
+  .hero-greeting { font-size: 13px; margin-bottom: 8px; letter-spacing: 0.5px; }
+  .hero-name { font-size: clamp(32px, 9vw, 48px); margin-bottom: 12px; letter-spacing: -1px; line-height: 1.1; }
+  .hero-title-line { font-size: 15px; margin: 10px 0 14px; height: 22px; }
+  .hero-headline { font-size: 15px; font-weight: 600; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid rgba(255,159,28,0.3); border-left: none; padding-left: 0; text-align: center; }
+  .hero-desc { font-size: 14px; color: #aaa; line-height: 1.7; margin-bottom: 24px; max-width: 100%; }
+  .hero-btns { justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+  .btn { padding: 12px 24px; font-size: 13px; }
+  .hero-socials { justify-content: center; gap: 12px; }
+
+  .hero-image-wrap { width: 220px; height: 220px; margin: 0 auto; }
+  .badge-node   { bottom: -8px; left: -12px; font-size: 10px; padding: 4px 9px; }
+  .badge-python { top: -8px; left: -16px; font-size: 10px; padding: 4px 9px; }
+  .badge-mongo  { bottom: 50px; right: -12px; font-size: 10px; padding: 4px 9px; }
+  .badge-ai     { top: 50px; right: -12px; font-size: 10px; padding: 4px 9px; }
+  .section-pad { padding: 48px 0; }
+  .section-title { font-size: clamp(28px, 7vw, 42px); margin-bottom: 16px; }
+  /* Stats */
+  .stats-inner { gap: 0; }
+  .stat-item { padding: 16px 18px; }
+  .stat-divider { width: 1px; height: 40px; }
+  .stat-num { font-size: 32px; }
+  .stat-label { font-size: 11px; }
+
+  /* About */
+  .about-pillars { display: flex; flex-direction: column; gap: 8px; }
+  .pillar { display: flex; width: 100%; justify-content: flex-start; }
+
+  /* Timeline */
+  .timeline-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .timeline-meta { align-items: flex-start; }
+  .timeline-content { padding: 18px; }
+
+  /* Projects */
+  .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+  .project-card { padding: 16px; }
+
+  /* Achievements */
+  .achievements-grid { grid-template-columns: 1fr; gap: 16px; }
+  .achievement-card { padding: 16px; gap: 12px; }
+
+  /* Skills */
+  .skill-cards { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .skill-card { padding: 12px; gap: 10px; }
+  .skill-card img { width: 36px; height: 36px; }
+
+  /* Contact */
+  .contact-inner { padding: 32px 20px; border-radius: 16px; }
+  .contact-heading { font-size: clamp(24px, 6vw, 32px); margin-bottom: 12px; }
+  .contact-sub { font-size: 14px; margin-bottom: 28px; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; text-align: center; align-items: center; }
+
+  .section-pad { padding: 60px 0; }
+  .section-title { font-size: clamp(28px, 7vw, 42px); margin-bottom: 20px; }
+  .container { padding: 0 16px; }
+}
+
+/* ==================== SMALL MOBILE (max-width: 480px) ==================== */
+@media screen and (max-width: 480px) {
+  body { overflow-x: hidden; }
+
+  /* Hero — clean mobile design */
+  .hero { padding: 120px 12px 45px; }
+  .hero-name { font-size: clamp(28px, 8vw, 40px); letter-spacing: -1px; }
+  .hero-greeting { font-size: 12px; }
+  .hero-title-line { font-size: 13px; margin: 8px 0 12px; }
+
+  .hero-headline { font-size: 13px; padding-bottom: 8px; margin-bottom: 12px; }
+  .hero-desc { font-size: 13px; margin-bottom: 18px; }
+
+  .hero-btns { flex-direction: column-reverse; gap: 7px; }
+  .btn { width: 100%; justify-content: center; padding: 10px 16px; font-size: 12px; }
+  .hero-socials { gap: 10px; }
+
+  .hero-image-wrap { width: 160px; height: 160px; }
+  .hero-badge { font-size: 9px; padding: 3px 7px; gap: 2px; }
+  .badge-node   { bottom: -5px; left: -8px; }
+  .badge-python { top: -5px; left: -10px; }
+  .badge-mongo  { bottom: 30px; right: -8px; }
+  .badge-ai     { top: 30px; right: -8px; }
+
+  /* Stats */
+  .stats-inner { flex-direction: column; gap: 0; }
+  .stat-item { padding: 14px 12px; }
+  .stat-divider { display: none; }
+  .stat-num { font-size: 28px; }
+
+  /* Timeline */
+  .timeline-content { padding: 14px; }
+  .timeline-role { font-size: 16px; }
+  .timeline-bullets li { font-size: 12px; }
+  .timeline-stack span { font-size: 9px; padding: 3px 8px; }
+
+  /* Projects & achievements */
+  .project-card { padding: 12px; }
+  .project-card h3 { font-size: 16px; }
+  .achievement-card { padding: 12px; flex-direction: column; }
+  .achievement-text h3 { font-size: 14px; }
+  .achievement-text p { font-size: 12px; }
+
+  /* Skills */
+  .skill-cards { grid-template-columns: 1fr; gap: 7px; }
+  .skill-card { padding: 10px; gap: 8px; }
+  .skill-name { font-size: 13px; }
+  .skill-desc { font-size: 10px; }
+
+  /* Contact buttons */
+  .contact-btns { flex-direction: column; gap: 7px; }
+  .contact-btn { width: 100%; justify-content: center; padding: 10px 14px; font-size: 12px; }
+  .contact-inner { padding: 24px 14px; border-radius: 12px; }
+  .contact-heading { font-size: 24px; }
+  .contact-sub { font-size: 13px; }
+
+  .section-title { font-size: 24px; margin-bottom: 32px; }
+  .section-pad { padding: 40px 0; }
+  .container { padding: 0 12px; }
+  .section-label { font-size: 11px; margin-bottom: 12px; }
+}}}
+
+/* ==================== EXTRA SMALL (max-width: 360px) ==================== */
+@media screen and (max-width: 360px) {
+  .hero-name { font-size: 30px; }
+  .section-title { font-size: 24px; }
+  .hero { padding: 140px 12px 50px; }
+  .container { padding: 0 12px; }
+
+  /* Badges hidden only on truly tiny screens to avoid overlap */
+  .badge-node, .badge-python, .badge-mongo, .badge-ai { display: none; }
+}
