@@ -1,9 +1,9 @@
 /* ==================== HAMBURGER / SIDEBAR ==================== */
-const hamburger     = document.getElementById('hamburger');
-const sidebar       = document.getElementById('sidebar');
-const sidebarClose  = document.getElementById('sidebarClose');
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const sidebarClose = document.getElementById('sidebarClose');
 const sidebarOverlay = document.getElementById('sidebarOverlay');
-const sidebarLinks  = document.querySelectorAll('.sidebar-link');
+const sidebarLinks = document.querySelectorAll('.sidebar-link');
 
 function openSidebar() {
   sidebar.classList.add('open');
@@ -53,12 +53,99 @@ function updateActiveNav() {
 
 window.addEventListener('scroll', updateActiveNav);
 
+/* ==================== SKILL PROGRESS RINGS ==================== */
+const skillCards = document.querySelectorAll('.skill-card');
+
+function getSkillTarget(label) {
+  const ranges = {
+    'Python': [70, 70],
+    'JavaScript': [70, 70],
+    'SQL': [85, 85],
+    'Java': [65, 65],
+    'C': [80, 80],
+    'Node.js': [85, 95],
+    'Express.js': [83, 94],
+    'MongoDB': [68, 68],
+    'LangChain': [55, 75],
+    'Supabase': [65, 65],
+    'HTML / CSS': [80, 94],
+    'Git & GitHub': [74, 89],
+    'VS Code': [90, 98]
+  };
+
+  const range = ranges[label] || [60, 90];
+  return Math.round(range[0] + Math.random() * (range[1] - range[0]));
+}
+
+function ensureSkillRing(card) {
+  if (card.querySelector('.skill-progress')) return card.querySelector('.skill-progress');
+
+  const ring = document.createElement('div');
+  ring.className = 'skill-progress';
+  ring.innerHTML = '<span>0%</span>';
+  card.appendChild(ring);
+  card.setAttribute('tabindex', '0');
+
+  const label = card.querySelector('.skill-name');
+  const target = getSkillTarget(label ? label.textContent.trim() : '');
+  ring.dataset.target = String(target);
+  card.dataset.skillTarget = String(target);
+  card.style.setProperty('--skill-progress', '0');
+
+  return ring;
+}
+
+function animateSkillCard(card) {
+  const ring = ensureSkillRing(card);
+  const target = parseInt(ring.dataset.target || card.dataset.skillTarget || '0', 10);
+  const valueEl = ring.querySelector('span');
+  const duration = 1000;
+  const start = performance.now();
+
+  if (card._skillFrame) {
+    cancelAnimationFrame(card._skillFrame);
+  }
+
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const current = Math.round(target * progress);
+    card.style.setProperty('--skill-progress', String(current));
+    if (valueEl) {
+      valueEl.textContent = current + '%';
+    }
+
+    if (progress < 1) {
+      card._skillFrame = requestAnimationFrame(tick);
+    }
+  }
+
+  card._skillFrame = requestAnimationFrame(tick);
+}
+
+skillCards.forEach(card => {
+  ensureSkillRing(card);
+  card.addEventListener('mouseenter', () => animateSkillCard(card));
+  card.addEventListener('focus', () => animateSkillCard(card));
+});
+
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.skillAnimated) {
+      entry.target.dataset.skillAnimated = 'true';
+      animateSkillCard(entry.target);
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.45 });
+
+skillCards.forEach(card => skillObserver.observe(card));
+
 /* ==================== TYPING EFFECT ==================== */
 const phrases = [
-  'Backend & Generative AI ',
-  'Node.js & Express Engineer',
-  'MongoDB & API Specialist',
-  'Problem Solver & Builder'
+  'Backend Developer',
+  'Generative AI Developer',
+  'Learning LangChain',
+  'Node.js & Express Engineer'
 ];
 
 let phraseIndex = 0;
