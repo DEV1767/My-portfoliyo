@@ -761,9 +761,11 @@ img {
   animation: slideInLeft 0.7s 0.2s ease both;
 }
 
-font-size: 16px;
-color: #aaa;
-line-height: 1.85;
+.about-text p {
+  font-size: 16px;
+  color: #aaa;
+  line-height: 1.85;
+  margin-bottom: 12px;
 }
 
 .about-pillars {
@@ -787,10 +789,6 @@ line-height: 1.85;
 
 .about-pillars .pillar:last-child {
   margin-bottom: 0;
-}
-
-.about-text p {
-  margin-bottom: 12px;
 }
 
 .pillar {
@@ -1159,6 +1157,17 @@ line-height: 1.85;
   border-color: var(--orange);
   color: var(--orange);
   background: rgba(255, 159, 28, 0.06);
+}
+
+.proj-btn-live {
+  background:none;
+  color:white;
+  border-color:rgba(255, 255, 255, 0.08);
+}
+
+.proj-btn-live:hover {
+  background: var(--orange);
+  color: #000;
 }
 
 /* ==================== SKILLS ==================== */
