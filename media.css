@@ -142,22 +142,36 @@
     padding: 4px 9px;
   }
 
-  .badge-python {
+  .badge-agentic {
     top: -8px;
     left: -16px;
     font-size: 10px;
     padding: 4px 9px;
   }
 
+  .badge-langgraph {
+    top: 92px;
+    left: -20px;
+    font-size: 10px;
+    padding: 4px 9px;
+  }
+
   .badge-langchain {
-    bottom: 50px;
+    bottom: -8px;
     right: -12px;
     font-size: 10px;
     padding: 4px 9px;
   }
 
+  .badge-agent {
+    top: 92px;
+    right: -20px;
+    font-size: 10px;
+    padding: 4px 9px;
+  }
+
   .badge-ai {
-    top: 50px;
+    top: -8px;
     right: -12px;
     font-size: 10px;
     padding: 4px 9px;
@@ -205,6 +219,8 @@
     display: flex;
     width: 100%;
     justify-content: flex-start;
+    font-size: 13px;
+    padding: 12px 16px;
   }
 
   /* Timeline */
@@ -376,18 +392,28 @@
     left: -8px;
   }
 
-  .badge-python {
+  .badge-agentic {
     top: -5px;
     left: -10px;
   }
 
+  .badge-langgraph {
+    top: 66px;
+    left: -14px;
+  }
+
   .badge-langchain {
-    bottom: 30px;
+    bottom: -5px;
     right: -8px;
   }
 
+  .badge-agent {
+    top: 66px;
+    right: -14px;
+  }
+
   .badge-ai {
-    top: 30px;
+    top: -5px;
     right: -8px;
   }
 
@@ -540,8 +566,10 @@
 
   /* Badges hidden only on truly tiny screens to avoid overlap */
   .badge-node,
-  .badge-python,
+  .badge-agentic,
+  .badge-langgraph,
   .badge-langchain,
+  .badge-agent,
   .badge-ai {
     display: none;
   }

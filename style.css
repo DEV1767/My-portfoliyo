@@ -514,31 +514,84 @@ img {
 }
 
 .badge-node {
-  bottom: 10px;
-  left: -30px;
+  bottom: 6px;
+  left: -14px;
   color: #68d391;
   animation-delay: 0s;
 }
 
-.badge-python {
-  top: 10px;
-  left: -40px;
+.badge-agentic {
+  top: -6px;
+  left: -20px;
   color: #f6e05e;
-  animation-delay: 0.7s;
+  animation-delay: 0.6s;
+}
+
+.badge-langgraph {
+  top: 132px;
+  left: -34px;
+  color: #4fd1c5;
+  animation-delay: 1.2s;
 }
 
 .badge-langchain {
-  bottom: 60px;
-  right: -30px;
+  bottom: 6px;
+  right: -14px;
   color: #68d391;
-  animation-delay: 1.4s;
+  animation-delay: 1.8s;
+}
+
+.badge-agent {
+  top: 132px;
+  right: -34px;
+  color: #63b3ed;
+  animation-delay: 2.4s;
 }
 
 .badge-ai {
-  top: 60px;
-  right: -30px;
+  top: -6px;
+  right: -20px;
   color: #9f7aea;
-  animation-delay: 2.1s;
+  animation-delay: 3s;
+}
+
+@media (max-width: 600px) {
+  .hero-badge {
+    font-size: 10px;
+    padding: 5px 10px;
+    gap: 5px;
+  }
+
+  .hero-badge img {
+    width: 13px;
+    height: 13px;
+  }
+
+  .badge-node {
+    left: -4px;
+  }
+
+  .badge-agentic {
+    left: -8px;
+  }
+
+  .badge-langgraph {
+    left: -14px;
+    top: 128px;
+  }
+
+  .badge-langchain {
+    right: -4px;
+  }
+
+  .badge-agent {
+    right: -14px;
+    top: 128px;
+  }
+
+  .badge-ai {
+    right: -8px;
+  }
 }
 
 @keyframes float {
