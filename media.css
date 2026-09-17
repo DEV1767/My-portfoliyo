@@ -37,6 +37,16 @@
 /* ==================== MOBILE (max-width: 768px) ==================== */
 @media screen and (max-width: 768px) {
 
+  /* Calmer, lighter motion on smaller/touch devices */
+  .hero-image {
+    animation: none;
+  }
+
+  .glow-1,
+  .glow-2 {
+    animation: none;
+  }
+
   /* Navbar */
   .nav-links {
     display: none;
@@ -93,7 +103,7 @@
     font-weight: 600;
     margin-bottom: 14px;
     padding-bottom: 10px;
-    border-bottom: 2px solid rgba(255, 159, 28, 0.3);
+    border-bottom: 2px solid rgba(0, 224, 143, 0.3);
     border-left: none;
     padding-left: 0;
     text-align: center;
@@ -117,11 +127,17 @@
   .btn {
     padding: 12px 24px;
     font-size: 13px;
+    min-height: 44px;
   }
 
   .btn-small {
     padding: 10px 18px;
     font-size: 12px;
+    min-height: 40px;
+  }
+
+  .hamburger {
+    padding: 10px;
   }
 
   .hero-socials {
@@ -244,7 +260,7 @@
     gap: 16px;
   }
 
-  .project-card {
+  .project-card-body {
     padding: 16px;
   }
 
@@ -454,8 +470,12 @@
   }
 
   /* Projects & achievements */
-  .project-card {
+  .project-card-body {
     padding: 12px;
+  }
+
+  .project-card-titlebar {
+    padding: 10px 12px;
   }
 
   .project-card h3 {

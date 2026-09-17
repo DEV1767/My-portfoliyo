@@ -25,13 +25,22 @@ sidebarLinks.forEach(link => link.addEventListener('click', closeSidebar));
 /* ==================== NAVBAR SCROLL EFFECTS ==================== */
 const navbar = document.getElementById('navbar');
 
+function updateScrollProgress() {
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+  document.documentElement.style.setProperty('--scroll-progress', progress.toFixed(2));
+}
+
 window.addEventListener('scroll', () => {
   if (window.scrollY > 40) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
+  updateScrollProgress();
 });
+
+updateScrollProgress();
 
 /* ==================== ACTIVE NAV LINK ON SCROLL ==================== */
 const sections = document.querySelectorAll('section[id]');
@@ -161,7 +170,3 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
-
-
-
-

@@ -227,78 +227,96 @@
       <div class="projects-grid">
 
         <div class="project-card reveal">
-          <div class="project-tag">Active &bull; Mar 2026</div>
-          <div class="project-icon-wrap"><i class="fa-solid fa-calendar-days"></i></div>
-          <h3>EventHub — College Event Management Platform</h3>
-          <p>Scalable backend system to manage college events, users, teams, and scheduling with role-based access
-            control. Designed to support 1000+ users with efficient API performance.</p>
-          <ul class="project-highlights">
-            <li>MVC pattern with modular structure &amp; middleware-based validation</li>
-            <li>JWT-based role-based access control for students, organizers &amp; admins</li>
-            <li>Centralized error handling &amp; Joi schema validation</li>
-            <li>Cut average database fetch latency from ~700ms to ~100ms (~85% faster) with Redis caching</li>
-            <li>Rate limiting to prevent abuse and hardened file-upload handling under concurrent load</li>
-          </ul>
-          <div class="project-stack">
-            <span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Mongoose</span><span>Redis</span><span>JWT</span><span>Joi</span>
+          <div class="project-card-titlebar">
+            <span></span><span></span><span></span>
+            <span class="project-path">eventhub.js</span>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/DEV1767" target="_blank" class="proj-btn">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
-            <a href="https://eduhub-eta-coral.vercel.app/index.html" target="_blank" class="proj-btn proj-btn-live">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <div class="project-tag">Active &bull; Aug 2026</div>
-          <div class="project-icon-wrap"><i class="fa-solid fa-terminal"></i></div>
-          <h3>AI Commander — VS Code AI Coding Agent</h3>
-          <p>A custom TypeScript VS Code extension paired with a Node.js/Express backend and a LangGraph-based agent
-            that captures and cleans terminal error output, then generates LLM-powered debugging guidance directly
-            inside the developer's IDE workflow.</p>
-          <ul class="project-highlights">
-            <li>Node.js/Express backend with MongoDB session storage integrated into the extension</li>
-            <li>V2: authentication architecture, context-aware error analysis &amp; a dashboard for AI explanations,
-              risk levels, and prevention tips</li>
-            <li>V3 in progress: FastAPI agent backend with Model Context Protocol (MCP) for direct log access from
-              hosted apps</li>
-            <li>Working toward autonomous, environment-aware debugging assistance</li>
-          </ul>
-          <div class="project-stack">
-            <span>VS Code Extension
-              API</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>FastAPI</span><span>LangGraph</span><span>LLM
-              APIs</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/DEV1767/Ai-Commander" target="_blank" class="proj-btn">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
+          <div class="project-card-body">
+            <div class="project-tag">Active &bull; Mar 2026</div>
+            <div class="project-icon-wrap"><i class="fa-solid fa-calendar-days"></i></div>
+            <h3>EventHub — College Event Management Platform</h3>
+            <p>Scalable backend system to manage college events, users, teams, and scheduling with role-based access
+              control. Designed to support 1000+ users with efficient API performance.</p>
+            <ul class="project-highlights">
+              <li>MVC pattern with modular structure &amp; middleware-based validation</li>
+              <li>JWT-based role-based access control for students, organizers &amp; admins</li>
+              <li>Centralized error handling &amp; Joi schema validation</li>
+              <li>Cut average database fetch latency from ~700ms to ~100ms (~85% faster) with Redis caching</li>
+              <li>Rate limiting to prevent abuse and hardened file-upload handling under concurrent load</li>
+            </ul>
+            <div class="project-stack">
+              <span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Mongoose</span><span>Redis</span><span>JWT</span><span>Joi</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/DEV1767" target="_blank" class="proj-btn">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="https://eduhub-eta-coral.vercel.app/index.html" target="_blank" class="proj-btn proj-btn-live">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="project-card reveal">
-          <div class="project-tag">RAG &bull; Aug 2026</div>
-          <div class="project-icon-wrap"><i class="fa-solid fa-user-tie"></i></div>
-          <h3>HR AI — Agentic Policy Assistant</h3>
-          <p>A RAG-based HR assistant using LangChain, Groq, and Qdrant to retrieve and answer employee queries from
-            company policy documents with context-aware, LLM-generated responses, reducing manual policy lookup.</p>
-          <ul class="project-highlights">
-            <li>LangSmith integration for full pipeline observability</li>
-            <li>Guardrails layer to protect against prompt injection and jailbreak attempts</li>
-            <li>Backend architected with FastAPI and Node.js/Express.js, backed by MongoDB</li>
-            <li>Extending toward agentic workflows so employees can submit requests (e.g. leave applications) through
-              automated, database-integrated actions</li>
-          </ul>
-          <div class="project-stack">
-            <span>Python</span><span>LangChain</span><span>Groq</span><span>Qdrant</span><span>FastAPI</span><span>Node.js</span><span>MongoDB</span><span>LangSmith</span>
+          <div class="project-card-titlebar">
+            <span></span><span></span><span></span>
+            <span class="project-path">ai-commander.ts</span>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/DEV1767/HR-Support-RAG-" target="_blank" class="proj-btn">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
+          <div class="project-card-body">
+            <div class="project-tag">Active &bull; Aug 2026</div>
+            <div class="project-icon-wrap"><i class="fa-solid fa-terminal"></i></div>
+            <h3>AI Commander — VS Code AI Coding Agent</h3>
+            <p>A custom TypeScript VS Code extension paired with a Node.js/Express backend and a LangGraph-based agent
+              that captures and cleans terminal error output, then generates LLM-powered debugging guidance directly
+              inside the developer's IDE workflow.</p>
+            <ul class="project-highlights">
+              <li>Node.js/Express backend with MongoDB session storage integrated into the extension</li>
+              <li>V2: authentication architecture, context-aware error analysis &amp; a dashboard for AI explanations,
+                risk levels, and prevention tips</li>
+              <li>V3 in progress: FastAPI agent backend with Model Context Protocol (MCP) for direct log access from
+                hosted apps</li>
+              <li>Working toward autonomous, environment-aware debugging assistance</li>
+            </ul>
+            <div class="project-stack">
+              <span>VS Code Extension
+                API</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>FastAPI</span><span>LangGraph</span><span>LLM
+                APIs</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/DEV1767/Ai-Commander" target="_blank" class="proj-btn">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-titlebar">
+            <span></span><span></span><span></span>
+            <span class="project-path">hr_ai_agent.py</span>
+          </div>
+          <div class="project-card-body">
+            <div class="project-tag">RAG &bull; Aug 2026</div>
+            <div class="project-icon-wrap"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>HR AI — Agentic Policy Assistant</h3>
+            <p>A RAG-based HR assistant using LangChain, Groq, and Qdrant to retrieve and answer employee queries from
+              company policy documents with context-aware, LLM-generated responses, reducing manual policy lookup.</p>
+            <ul class="project-highlights">
+              <li>LangSmith integration for full pipeline observability</li>
+              <li>Guardrails layer to protect against prompt injection and jailbreak attempts</li>
+              <li>Backend architected with FastAPI and Node.js/Express.js, backed by MongoDB</li>
+              <li>Extending toward agentic workflows so employees can submit requests (e.g. leave applications) through
+                automated, database-integrated actions</li>
+            </ul>
+            <div class="project-stack">
+              <span>Python</span><span>LangChain</span><span>Groq</span><span>Qdrant</span><span>FastAPI</span><span>Node.js</span><span>MongoDB</span><span>LangSmith</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/DEV1767/HR-Support-RAG-" target="_blank" class="proj-btn">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
           </div>
         </div>
 
