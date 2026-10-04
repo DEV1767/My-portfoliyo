@@ -42,12 +42,12 @@ export const metadata: Metadata = {
   title: 'Shivam Chaudhary — Backend & Agentic AI Developer',
   description:
     'Production portfolio of Shivam Chaudhary. Backend Developer engineering scalable systems, autonomous AI agents with LangGraph & LangChain, and production RAG pipelines.',
-  metadataBase: new URL('https://my-portfoliyo-nine.vercel.app'),
+  metadataBase: new URL('https://my-portfoliyo-delta.vercel.app'),
   openGraph: {
     title: 'Shivam Chaudhary — Backend & Agentic AI Developer',
     description:
       'Backend Developer specializing in Generative AI & Agentic AI. Engineering scalable systems and autonomous agentic workflows.',
-    url: 'https://my-portfoliyo-nine.vercel.app',
+    url: 'https://my-portfoliyo-delta.vercel.app',
     siteName: 'Shivam Chaudhary Portfolio',
     images: [
       {

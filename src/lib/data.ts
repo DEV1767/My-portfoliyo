@@ -111,7 +111,7 @@ export const PROFILE: Profile = {
   github: 'https://github.com/DEV1767',
   linkedin: 'https://www.linkedin.com/in/shivam076/',
   leetcode: 'https://leetcode.com/u/Shivam_garg76/',
-  portfolioUrl: 'https://my-portfoliyo-nine.vercel.app/',
+  portfolioUrl: 'https://my-portfoliyo-delta.vercel.app',
   resumePath: '/Shivam_Chaudhary_Resume.pdf',
   idNumber: 'SC-AIML-2024',
   dept: 'AI & Machine Learning',
