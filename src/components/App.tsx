@@ -14,7 +14,7 @@ import { RevealObserver } from '@/components/ui/RevealObserver';
 
 export function App() {
   return (
-    <div className="relative min-h-screen bg-[var(--paper)] text-[var(--ink)] overflow-x-hidden">
+    <div className="relative min-h-screen bg-[var(--paper)] text-[var(--ink)] overflow-x-clip">
       <RevealObserver />
       <Navigation />
       <main>

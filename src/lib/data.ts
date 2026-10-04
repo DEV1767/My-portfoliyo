@@ -266,7 +266,7 @@ export const CERTIFICATIONS: CertificationItem[] = [];
 export const ACHIEVEMENTS: AchievementItem[] = [
   {
     id: 'bug-bounty',
-    index: '01 / 04',
+    index: '01 / 03',
     platform: 'Mysterio 6.0',
     label: 'Bug Bounty Event',
     caption: '2nd Place Winner',
@@ -278,7 +278,7 @@ export const ACHIEVEMENTS: AchievementItem[] = [
   },
   {
     id: 'hackathons',
-    index: '02 / 04',
+    index: '02 / 03',
     platform: 'Hackathons & Contests',
     label: 'Competitive Engineering',
     caption: '5 Hackathons Competed',
@@ -290,27 +290,16 @@ export const ACHIEVEMENTS: AchievementItem[] = [
   },
   {
     id: 'leetcode',
-    index: '03 / 04',
+    index: '03 / 03',
     platform: 'LeetCode',
     label: 'Algorithmic Problem Solving',
-    caption: 'Continuous Practice',
-    detail: 'Active problem solver focusing on Data Structures, Algorithms, and optimization on LeetCode.',
-    metric: 100,
+    caption: 'Active Practice',
+    detail: 'Actively solving Data Structures and Algorithms problems on LeetCode with continuous daily practice.',
+    metric: 10,
     metricSuffix: '+',
     metricLabel: 'Problems Solved',
     logo: 'leetcode',
     url: 'https://leetcode.com/u/Shivam_garg76/',
   },
-  {
-    id: 'performance',
-    index: '04 / 04',
-    platform: 'Redis Cache Architecture',
-    label: 'Database Latency Reduction',
-    caption: '85% Query Acceleration',
-    detail: 'Cut average database fetch latency from ~700ms down to ~100ms in production with centralized Redis query caching.',
-    metric: 85,
-    metricSuffix: '%',
-    metricLabel: 'Faster Fetch',
-    logo: 'redis',
-  },
 ];
+
