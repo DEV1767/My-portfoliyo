@@ -28,7 +28,7 @@ export interface NavItem {
   index: string;
 }
 
-export type SkillFamily = 'Languages' | 'AI & Agentic' | 'Backend' | 'Tools' | 'Concepts';
+export type SkillFamily = 'Languages' | 'Frameworks' | 'Tools';
 
 export interface SkillElement {
   num: number;
@@ -95,6 +95,7 @@ export interface AchievementItem {
   metricLabel: string;
   logo: string;
   url?: string;
+  badge?: string;
 }
 
 export const PROFILE: Profile = {
@@ -128,52 +129,37 @@ export const NAV: NavItem[] = [
 ];
 
 export const SKILL_GROUPS: SkillElement[] = [
-  // Languages
+  // Languages (01 - 06)
   { num: 1, symbol: 'Py', name: 'Python', family: 'Languages', isBrand: true, logoKey: 'python', projects: ['Git RAG'], accentColor: '#3776AB' },
   { num: 2, symbol: 'Js', name: 'JavaScript', family: 'Languages', isBrand: true, logoKey: 'javascript', projects: ['Indalnova', 'EventHub', 'AI Commander'], accentColor: '#F7DF1E' },
-  { num: 3, symbol: 'Jv', name: 'Java', family: 'Languages', isBrand: true, logoKey: 'java', projects: ['LeetCode / Core DSA'], accentColor: '#007396' },
-  { num: 4, symbol: 'C', name: 'C', family: 'Languages', isBrand: true, logoKey: 'c', projects: ['Systems Programming'], accentColor: '#A8B9CC' },
-  { num: 5, symbol: 'Sq', name: 'SQL', family: 'Languages', isBrand: true, logoKey: 'sql', projects: ['EventHub', 'Database Schemas'], accentColor: '#00618A' },
-  { num: 6, symbol: 'Ts', name: 'TypeScript', family: 'Languages', isBrand: true, logoKey: 'typescript', projects: ['AI Commander'], accentColor: '#3178C6' },
+  { num: 3, symbol: 'Ts', name: 'TypeScript', family: 'Languages', isBrand: true, logoKey: 'typescript', projects: ['AI Commander'], accentColor: '#3178C6' },
+  { num: 4, symbol: 'Jv', name: 'Java', family: 'Languages', isBrand: true, logoKey: 'java', projects: ['LeetCode / Core DSA'], accentColor: '#007396' },
+  { num: 5, symbol: 'C', name: 'C', family: 'Languages', isBrand: true, logoKey: 'c', projects: ['Systems Programming'], accentColor: '#A8B9CC' },
+  { num: 6, symbol: 'Sq', name: 'SQL', family: 'Languages', isBrand: true, logoKey: 'sql', projects: ['EventHub', 'Database Schemas'], accentColor: '#00618A' },
 
-  // Generative & Agentic AI
-  { num: 7, symbol: 'Lg', name: 'LangGraph', family: 'AI & Agentic', isBrand: true, logoKey: 'langgraph', projects: ['Git RAG', 'AI Commander'], accentColor: '#2B2B2B' },
-  { num: 8, symbol: 'Lc', name: 'LangChain', family: 'AI & Agentic', isBrand: true, logoKey: 'langchain', projects: ['Git RAG'], accentColor: '#1C3C3C' },
-  { num: 9, symbol: 'Rg', name: 'Hybrid RAG', family: 'AI & Agentic', isBrand: false, logoKey: 'rag', projects: ['Git RAG'], accentColor: '#5B5BD6' },
-  { num: 10, symbol: 'Qd', name: 'Qdrant', family: 'AI & Agentic', isBrand: true, logoKey: 'qdrant', projects: ['Git RAG'], accentColor: '#DC382D' },
-  { num: 11, symbol: 'Bm', name: 'BM25', family: 'AI & Agentic', isBrand: false, logoKey: 'bm25', projects: ['Git RAG'], accentColor: '#6B7280' },
-  { num: 12, symbol: 'Ce', name: 'Cross-Encoder', family: 'AI & Agentic', isBrand: false, logoKey: 'encoder', projects: ['Git RAG'], accentColor: '#8B5CF6' },
-  { num: 13, symbol: 'Mc', name: 'MCP (Model Context Protocol)', family: 'AI & Agentic', isBrand: false, logoKey: 'mcp', projects: ['Git RAG', 'AI Commander'], accentColor: '#0EA5E9' },
-  { num: 14, symbol: 'Pe', name: 'Prompt Engineering', family: 'AI & Agentic', isBrand: false, logoKey: 'prompt', projects: ['Git RAG', 'AI Commander'], accentColor: '#F59E0B' },
-  { num: 15, symbol: 'Gr', name: 'Guardrails', family: 'AI & Agentic', isBrand: false, logoKey: 'guardrails', projects: ['Git RAG'], accentColor: '#10B981' },
-  { num: 16, symbol: 'Ls', name: 'LangSmith', family: 'AI & Agentic', isBrand: true, logoKey: 'langsmith', projects: ['Git RAG'], accentColor: '#FF6B6B' },
-  { num: 17, symbol: 'Hf', name: 'Hugging Face', family: 'AI & Agentic', isBrand: true, logoKey: 'huggingface', projects: ['Git RAG'], accentColor: '#FFD21E' },
-  { num: 18, symbol: 'Gq', name: 'Groq', family: 'AI & Agentic', isBrand: true, logoKey: 'groq', projects: ['Git RAG'], accentColor: '#F55036' },
-  { num: 19, symbol: 'Or', name: 'OpenRouter', family: 'AI & Agentic', isBrand: true, logoKey: 'openrouter', projects: ['Git RAG'], accentColor: '#6366F1' },
-  { num: 20, symbol: 'Gm', name: 'Google AI (Gemini)', family: 'AI & Agentic', isBrand: true, logoKey: 'googleai', projects: ['Git RAG', 'VeriVox AI'], accentColor: '#4285F4' },
+  // Frameworks & Libraries (07 - 12)
+  { num: 7, symbol: 'Lg', name: 'LangGraph', family: 'Frameworks', isBrand: true, logoKey: 'langgraph', projects: ['Git RAG', 'AI Commander'], accentColor: '#2B2B2B' },
+  { num: 8, symbol: 'Lc', name: 'LangChain', family: 'Frameworks', isBrand: true, logoKey: 'langchain', projects: ['Git RAG'], accentColor: '#1C3C3C' },
+  { num: 9, symbol: 'Fa', name: 'FastAPI', family: 'Frameworks', isBrand: true, logoKey: 'fastapi', projects: ['Git RAG', 'AI Commander V3'], accentColor: '#009688' },
+  { num: 10, symbol: 'Nd', name: 'Node.js', family: 'Frameworks', isBrand: true, logoKey: 'nodejs', projects: ['EventHub', 'AI Commander', 'Indalnova'], accentColor: '#339933' },
+  { num: 11, symbol: 'Ex', name: 'Express.js', family: 'Frameworks', isBrand: true, logoKey: 'express', projects: ['EventHub', 'AI Commander', 'Indalnova'], accentColor: '#000000' },
+  { num: 12, symbol: 'Mo', name: 'Mongoose', family: 'Frameworks', isBrand: true, logoKey: 'mongoose', projects: ['EventHub'], accentColor: '#880000' },
 
-  // Backend Development
-  { num: 21, symbol: 'Nd', name: 'Node.js', family: 'Backend', isBrand: true, logoKey: 'nodejs', projects: ['EventHub', 'AI Commander', 'Indalnova'], accentColor: '#339933' },
-  { num: 22, symbol: 'Ex', name: 'Express.js', family: 'Backend', isBrand: true, logoKey: 'express', projects: ['EventHub', 'AI Commander', 'Indalnova'], accentColor: '#000000' },
-  { num: 23, symbol: 'Fa', name: 'FastAPI', family: 'Backend', isBrand: true, logoKey: 'fastapi', projects: ['Git RAG', 'AI Commander V3'], accentColor: '#009688' },
-  { num: 24, symbol: 'Mg', name: 'MongoDB', family: 'Backend', isBrand: true, logoKey: 'mongodb', projects: ['EventHub', 'AI Commander', 'Indalnova'], accentColor: '#47A248' },
-  { num: 25, symbol: 'Mo', name: 'Mongoose', family: 'Backend', isBrand: true, logoKey: 'mongoose', projects: ['EventHub'], accentColor: '#880000' },
-  { num: 26, symbol: 'Rd', name: 'Redis', family: 'Backend', isBrand: true, logoKey: 'redis', projects: ['EventHub'], accentColor: '#DC382D' },
-  { num: 27, symbol: 'Jw', name: 'JWT Auth', family: 'Backend', isBrand: false, logoKey: 'jwt', projects: ['EventHub', 'AI Commander V2'], accentColor: '#D63AFF' },
-  { num: 28, symbol: 'Ra', name: 'REST APIs', family: 'Backend', isBrand: false, logoKey: 'api', projects: ['EventHub', 'Git RAG'], accentColor: '#3B82F6' },
-  { num: 29, symbol: 'Sb', name: 'Supabase', family: 'Backend', isBrand: true, logoKey: 'supabase', projects: ['Indalnova'], accentColor: '#3ECF8E' },
-
-  // Tools & Platforms
-  { num: 30, symbol: 'Gt', name: 'Git', family: 'Tools', isBrand: true, logoKey: 'git', projects: ['All Projects'], accentColor: '#F05032' },
-  { num: 31, symbol: 'Gh', name: 'GitHub', family: 'Tools', isBrand: true, logoKey: 'github', projects: ['All Repositories', 'GitHub MCP'], accentColor: '#181717' },
-  { num: 32, symbol: 'Dk', name: 'Docker', family: 'Tools', isBrand: true, logoKey: 'docker', projects: ['Git RAG'], accentColor: '#2496ED' },
-  { num: 33, symbol: 'Pm', name: 'Postman', family: 'Tools', isBrand: true, logoKey: 'postman', projects: ['EventHub API Testing'], accentColor: '#FF6C37' },
-  { num: 34, symbol: 'Vc', name: 'VS Code', family: 'Tools', isBrand: true, logoKey: 'vscode', projects: ['AI Commander Extension'], accentColor: '#007ACC' },
-
-  // Concepts
-  { num: 35, symbol: 'Ds', name: 'Data Structures & Algorithms', family: 'Concepts', isBrand: false, logoKey: 'dsa', projects: ['LeetCode 100+'], accentColor: '#6B7280' },
-  { num: 36, symbol: 'Sd', name: 'System Design', family: 'Concepts', isBrand: false, logoKey: 'systemdesign', projects: ['EventHub Architecture'], accentColor: '#6B7280' },
-  { num: 37, symbol: 'Op', name: 'OOP & MVC Pattern', family: 'Concepts', isBrand: false, logoKey: 'oop', projects: ['EventHub', 'AI Commander'], accentColor: '#6B7280' },
+  // Tools & Platforms (13 - 26)
+  { num: 13, symbol: 'Dk', name: 'Docker', family: 'Tools', isBrand: true, logoKey: 'docker', projects: ['Git RAG'], accentColor: '#2496ED' },
+  { num: 14, symbol: 'Gt', name: 'Git', family: 'Tools', isBrand: true, logoKey: 'git', projects: ['All Projects'], accentColor: '#F05032' },
+  { num: 15, symbol: 'Gh', name: 'GitHub', family: 'Tools', isBrand: true, logoKey: 'github', projects: ['All Repositories', 'GitHub MCP'], accentColor: '#181717' },
+  { num: 16, symbol: 'Pm', name: 'Postman', family: 'Tools', isBrand: true, logoKey: 'postman', projects: ['EventHub API Testing'], accentColor: '#FF6C37' },
+  { num: 17, symbol: 'Vc', name: 'VS Code', family: 'Tools', isBrand: true, logoKey: 'vscode', projects: ['AI Commander Extension'], accentColor: '#007ACC' },
+  { num: 18, symbol: 'Mg', name: 'MongoDB', family: 'Tools', isBrand: true, logoKey: 'mongodb', projects: ['EventHub', 'AI Commander', 'Indalnova'], accentColor: '#47A248' },
+  { num: 19, symbol: 'Rd', name: 'Redis', family: 'Tools', isBrand: true, logoKey: 'redis', projects: ['EventHub'], accentColor: '#DC382D' },
+  { num: 20, symbol: 'Qd', name: 'Qdrant', family: 'Tools', isBrand: true, logoKey: 'qdrant', projects: ['Git RAG'], accentColor: '#DC382D' },
+  { num: 21, symbol: 'Sb', name: 'Supabase', family: 'Tools', isBrand: true, logoKey: 'supabase', projects: ['Indalnova'], accentColor: '#3ECF8E' },
+  { num: 22, symbol: 'Ls', name: 'LangSmith', family: 'Tools', isBrand: true, logoKey: 'langsmith', projects: ['Git RAG'], accentColor: '#FF6B6B' },
+  { num: 23, symbol: 'Hf', name: 'Hugging Face', family: 'Tools', isBrand: true, logoKey: 'huggingface', projects: ['Git RAG'], accentColor: '#FFD21E' },
+  { num: 24, symbol: 'Gq', name: 'Groq', family: 'Tools', isBrand: true, logoKey: 'groq', projects: ['Git RAG'], accentColor: '#F55036' },
+  { num: 25, symbol: 'Or', name: 'OpenRouter', family: 'Tools', isBrand: true, logoKey: 'openrouter', projects: ['Git RAG'], accentColor: '#6366F1' },
+  { num: 26, symbol: 'Gm', name: 'Google AI (Gemini)', family: 'Tools', isBrand: true, logoKey: 'googleai', projects: ['Git RAG', 'VeriVox AI'], accentColor: '#4285F4' },
 ];
 
 export const PROJECTS: Project[] = [
@@ -190,7 +176,7 @@ export const PROJECTS: Project[] = [
       'High-performance backend served through FastAPI and fully containerized with Docker for seamless deployment.',
       'Hybrid retrieval combines BM25 keyword matching and Qdrant vector search with Cross-Encoder reranking for code discovery.'
     ],
-    tech: ['Python', 'LangGraph', 'LangChain', 'GitHub MCP', 'Qdrant', 'BM25', 'Cross-Encoder', 'Hugging Face', 'FastAPI', 'Docker', 'Groq'],
+    tech: ['Python', 'LangGraph', 'LangChain', 'FastAPI', 'Docker', 'Qdrant', 'Hugging Face', 'Groq'],
     github: 'https://github.com/DEV1767/Git_rag',
     illustrativeUiType: 'rag-terminal',
   },
@@ -224,7 +210,7 @@ export const PROJECTS: Project[] = [
       'Hardened the API layer with robust rate limiting to prevent abuse and resolved file-upload concurrency bugs.',
       'Centralized middleware validation with Joi schemas and comprehensive error logging.'
     ],
-    tech: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Redis', 'JWT', 'Joi', 'REST APIs'],
+    tech: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Redis', 'Postman'],
     github: 'https://github.com/DEV1767/eventhub-backend',
     liveUrl: 'https://eduhub-eta-coral.vercel.app/index.html',
     illustrativeUiType: 'event-dashboard',
@@ -265,8 +251,21 @@ export const CERTIFICATIONS: CertificationItem[] = [];
 
 export const ACHIEVEMENTS: AchievementItem[] = [
   {
+    id: 'tcs-hackathon',
+    index: '01 / 04',
+    platform: 'TCS Tech Day',
+    label: 'TCS Hackathon @ JNNCE',
+    caption: '1st Place Winner',
+    detail: 'Secured 1st Place in the prestigious TCS Hackathon hosted at JNNCE as part of TCS Tech Day, solving real-world challenges through agile teamwork and robust engineering.',
+    metric: 1,
+    metricSuffix: 'st',
+    metricLabel: 'Place Award',
+    logo: 'tcs',
+    badge: '1st Prize 🏆',
+  },
+  {
     id: 'bug-bounty',
-    index: '01 / 03',
+    index: '02 / 04',
     platform: 'Mysterio 6.0',
     label: 'Bug Bounty Event',
     caption: '2nd Place Winner',
@@ -278,19 +277,19 @@ export const ACHIEVEMENTS: AchievementItem[] = [
   },
   {
     id: 'hackathons',
-    index: '02 / 03',
+    index: '03 / 04',
     platform: 'Hackathons & Contests',
     label: 'Competitive Engineering',
-    caption: '5 Hackathons Competed',
-    detail: "Participated in 5 hackathons including Smart India Hackathon (SIH), IGNITRON 2K25 (GM University), and Alva's Hackathon.",
-    metric: 5,
+    caption: '6 Hackathons Competed',
+    detail: "Participated in 6 hackathons including TCS Hackathon (1st Place), Smart India Hackathon (SIH), IGNITRON 2K25 (GM University), and Alva's Hackathon.",
+    metric: 6,
     metricSuffix: '+',
     metricLabel: 'Hackathons',
     logo: 'hackathon',
   },
   {
     id: 'leetcode',
-    index: '03 / 03',
+    index: '04 / 04',
     platform: 'LeetCode',
     label: 'Algorithmic Problem Solving',
     caption: 'Active Practice',

@@ -31,6 +31,7 @@ export const BRAND_KEYS = [
   'leetcode',
   'mysterio',
   'hackathon',
+  'tcs',
 ] as const;
 
 export type BrandKey = typeof BRAND_KEYS[number];
@@ -379,6 +380,77 @@ export function TechLogo({
             />
             <path d="M64 90v16M48 106h32" stroke="#F59E0B" strokeWidth="7" strokeLinecap="round" />
             <path d="M40 44H26c0 10 6 18 14 18M88 44h14c0 10-6 18-14 18" stroke="#F59E0B" strokeWidth="6" strokeLinecap="round" />
+          </svg>
+        );
+      case 'tcs':
+      case 'tcshackathon':
+        return (
+          <svg width={size} height={size} viewBox="0 0 128 128" fill="none">
+            {/* Dark premium badge backdrop */}
+            <rect width="128" height="128" rx="28" fill="#0A1128" />
+            <rect width="128" height="128" rx="28" stroke="rgba(0, 118, 206, 0.3)" strokeWidth="1.5" />
+
+            {/* Official TATA Header */}
+            <text
+              x="64"
+              y="32"
+              textAnchor="middle"
+              fill="#0076CE"
+              fontFamily="system-ui, -apple-system, sans-serif"
+              fontWeight="800"
+              fontSize="12"
+              letterSpacing="5"
+            >
+              TATA
+            </text>
+
+            {/* Prominent, crisp, modern bold TCS lettermark */}
+            <text
+              x="64"
+              y="74"
+              textAnchor="middle"
+              fill="#FFFFFF"
+              fontFamily="system-ui, -apple-system, sans-serif"
+              fontWeight="900"
+              fontSize="36"
+              letterSpacing="2"
+            >
+              TCS
+            </text>
+
+            {/* Signature TCS dynamic spectrum ribbon flourish */}
+            <path
+              d="M26 89 C40 83, 50 95, 64 89 C78 83, 88 95, 102 89"
+              stroke="url(#tcs-ribbon-gradient)"
+              strokeWidth="5"
+              strokeLinecap="round"
+              fill="none"
+            />
+
+            {/* Tagline micro-label */}
+            <text
+              x="64"
+              y="108"
+              textAnchor="middle"
+              fill="#94A3B8"
+              fontFamily="system-ui, -apple-system, sans-serif"
+              fontWeight="600"
+              fontSize="7.5"
+              letterSpacing="1.2"
+            >
+              TECH DAY · 1ST
+            </text>
+
+            {/* Spectrum Ribbon Gradient Definition */}
+            <defs>
+              <linearGradient id="tcs-ribbon-gradient" x1="26" y1="89" x2="102" y2="89" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#E11D48" />
+                <stop offset="25%" stopColor="#A855F7" />
+                <stop offset="55%" stopColor="#2563EB" />
+                <stop offset="80%" stopColor="#06B6D4" />
+                <stop offset="100%" stopColor="#10B981" />
+              </linearGradient>
+            </defs>
           </svg>
         );
 

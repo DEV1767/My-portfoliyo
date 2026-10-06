@@ -81,26 +81,31 @@ export function Achievements() {
 
           <div className="flex items-center gap-2 font-mono text-xs text-[var(--mute)] bg-white/70 backdrop-blur-sm border border-[var(--line)] px-4 py-2 rounded-full self-start md:self-auto">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>3 Benchmarks · Verified from Résumé</span>
+            <span>{ACHIEVEMENTS.length} Benchmarks · Hackathons &amp; Accolades</span>
           </div>
         </div>
 
-        {/* 3-Card Responsive Grid: 3 columns on desktop, 1 on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {/* 4-Card Responsive Grid: 2 columns on desktop/tablet, 1 on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {ACHIEVEMENTS.map((card, idx) => {
             return (
               <div
                 key={card.id}
-                className="card-surface p-7 sm:p-9 flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-black/15"
+                className="card-surface p-6 sm:p-8 md:p-9 flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-black/15"
                 style={{ borderRadius: '24px' }}
               >
-                {/* Card Top Row: Logo Tile + Monospace Index + Link */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[var(--paper)] border border-[var(--line)] flex items-center justify-center p-2.5 relative group-hover:border-[var(--ink)]/30 transition-colors">
+                {/* Card Top Row: Logo Tile + Monospace Index + Badge + Link */}
+                <div className="flex items-center justify-between gap-3 mb-6">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[var(--paper)] border border-[var(--line)] flex items-center justify-center p-2.5 relative group-hover:border-[var(--ink)]/30 transition-colors shrink-0">
                     <TechLogo name={card.logo} size={36} glow />
                   </div>
 
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end">
+                    {card.badge && (
+                      <span className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold py-1 px-2.5 rounded-full bg-amber-500/10 text-amber-800 border border-amber-500/30">
+                        {card.badge}
+                      </span>
+                    )}
                     {card.url && (
                       <a
                         href={card.url}
@@ -120,7 +125,7 @@ export function Achievements() {
 
                 {/* Card Middle: Kicker + Title + Detail */}
                 <div className="mb-8">
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
                     <span className="font-mono text-[11px] font-semibold text-[var(--mute)] uppercase tracking-wider">
                       {card.label}
                     </span>

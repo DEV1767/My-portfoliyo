@@ -366,12 +366,16 @@ function IllustrativeUi({ project }: { project: Project }) {
         <div className="p-3 rounded bg-neutral-900/80 border border-white/10 space-y-1 text-[11px]">
           <div className="text-neutral-400 text-[10px]">ACTIVE EVENTS QUEUE</div>
           <div className="flex justify-between text-neutral-300">
-            <span>• Hack Fest 1.0 JNNCE</span>
-            <span className="text-neutral-500">Organized</span>
+            <span>• TCS Hackathon @ JNNCE</span>
+            <span className="text-amber-400 font-semibold">1st Prize 🏆</span>
           </div>
           <div className="flex justify-between text-neutral-300">
             <span>• Mysterio 6.0 Bug Bounty</span>
             <span className="text-emerald-400">2nd Prize</span>
+          </div>
+          <div className="flex justify-between text-neutral-300">
+            <span>• Hack Fest 1.0 JNNCE</span>
+            <span className="text-neutral-500">Organized</span>
           </div>
         </div>
       </div>

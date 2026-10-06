@@ -8,15 +8,21 @@ import { TechLogo, isBrand } from '@/components/ui/TechLogo';
 const FAMILIES: ('All' | SkillFamily)[] = [
   'All',
   'Languages',
-  'AI & Agentic',
-  'Backend',
+  'Frameworks',
   'Tools',
-  'Concepts',
 ];
 
 export function Skills() {
   const [selectedFamily, setSelectedFamily] = useState<'All' | SkillFamily>('All');
   const [activeSkill, setActiveSkill] = useState<SkillElement>(SKILL_GROUPS[0]);
+
+  const handleFamilySelect = (family: 'All' | SkillFamily) => {
+    setSelectedFamily(family);
+    if (family !== 'All') {
+      const firstMatching = SKILL_GROUPS.find((s) => s.family === family);
+      if (firstMatching) setActiveSkill(firstMatching);
+    }
+  };
 
   return (
     <section id="skills" className="section-spacing relative bg-[var(--paper)]">
@@ -35,7 +41,7 @@ export function Skills() {
               return (
                 <button
                   key={family}
-                  onClick={() => setSelectedFamily(family)}
+                  onClick={() => handleFamilySelect(family)}
                   className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-200 ${
                     isSelected
                       ? 'bg-[var(--ink)] text-white shadow-sm'
@@ -139,7 +145,7 @@ export function Skills() {
                     {activeSkill.family}
                   </span>
                   <span className="font-mono text-xs text-[var(--mute)]">
-                    {isBrand(activeSkill.logoKey) ? 'Brand' : 'Concept'}
+                    Official Tech
                   </span>
                 </div>
 

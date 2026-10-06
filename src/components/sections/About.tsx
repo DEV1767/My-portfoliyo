@@ -269,7 +269,7 @@ export function About() {
                         </div>
                         <div>
                           <span className="text-[var(--mute)] block text-[10px] font-mono">HONOURS</span>
-                          <span className="font-semibold text-[var(--ink)]">2nd Place, Mysterio 6.0 Bug Bounty</span>
+                          <span className="font-semibold text-[var(--ink)]">1st Place, TCS Hackathon · 2nd Place, Mysterio 6.0</span>
                         </div>
                       </div>
                     </div>
