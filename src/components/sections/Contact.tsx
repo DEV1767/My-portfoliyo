@@ -3,7 +3,6 @@
 
 import React, { useState } from 'react';
 import { PROFILE } from '@/lib/data';
-import { scrollToTarget } from '@/lib/scroll';
 
 export function Contact() {
   const [copied, setCopied] = useState(false);
@@ -18,46 +17,27 @@ export function Contact() {
     }
   };
 
-  const headingLine1 = "Let's build";
-  const headingLine2 = 'something together.';
-
   return (
-    <section id="contact" className="section-spacing relative bg-[var(--paper)] border-t border-[var(--line)]">
-      <div className="section-container">
-        {/* Section tag */}
-        <div className="section-tag rv">06 — Contact</div>
+    <section id="contact" className="section-spacing relative bg-[#060608] border-t border-white/[0.08]">
+      {/* Background radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-[#8b5cf6]/10 via-[#ff2a5f]/10 to-transparent blur-[120px] pointer-events-none -z-10" />
 
-        {/* Main Content Area */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20">
-          {/* Interactive Hopping Heading */}
-          <div className="max-w-3xl">
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--ink)] leading-[1.08] select-none">
-              <span className="block mb-2">
-                {headingLine1.split('').map((char, i) => (
-                  <span
-                    key={i}
-                    className="inline-block transition-transform duration-200 hover:-translate-y-3 cursor-default"
-                  >
-                    {char === ' ' ? '\u00A0' : char}
-                  </span>
-                ))}
-              </span>
-              <span className="block">
-                {headingLine2.split('').map((char, i) => (
-                  <span
-                    key={i}
-                    className={`inline-block transition-transform duration-200 hover:-translate-y-3 cursor-default ${
-                      i >= 10 ? 'heading-accent' : ''
-                    }`}
-                  >
-                    {char === ' ' ? '\u00A0' : char}
-                  </span>
-                ))}
-              </span>
+      <div className="section-container">
+        {/* Section Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16">
+          <div className="rv max-w-2xl">
+            <div className="section-tag">06 — Contact</div>
+            <h2 className="section-heading !mb-4">
+              Have an idea?
+              <br />
+              <span className="heading-accent">Let&apos;s build it.</span>
             </h2>
+            <p className="text-base sm:text-lg text-white/70 leading-relaxed">
+              Whether it&apos;s an autonomous agent workflow, high-performance backend architecture, production RAG pipeline, or engineering opportunity, feel free to reach out.
+            </p>
           </div>
 
-          {/* Rotating "Say Hello" circular text badge */}
+          {/* Rotating "Say Hello" badge */}
           <div className="relative w-32 h-32 flex-shrink-0 mx-auto lg:mx-0">
             <div className="w-full h-full animate-spin-slow">
               <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -66,42 +46,37 @@ export function Contact() {
                   d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
                   fill="none"
                 />
-                <text className="font-mono text-[9px] uppercase tracking-[0.24em] fill-[var(--ink)]">
+                <text className="font-mono text-[9px] uppercase tracking-[0.24em] fill-white/70">
                   <textPath href="#textPathCircle" startOffset="0%">
                     • SAY HELLO • GET IN TOUCH • SHIVAM •
                   </textPath>
                 </text>
               </svg>
             </div>
-            <div className="absolute inset-0 m-auto w-10 h-10 rounded-full bg-[var(--ink)] text-white flex items-center justify-center font-mono text-xs">
+            <div className="absolute inset-0 m-auto w-10 h-10 rounded-full bg-gradient-to-tr from-[#ff2a5f] to-[#8b5cf6] text-white flex items-center justify-center font-mono text-xs shadow-lg shadow-[#8b5cf6]/30">
               ↗
             </div>
           </div>
         </div>
 
-        {/* Email & Contact Details Card */}
-        <div className="card-surface p-8 sm:p-12 mb-20 rv">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[var(--line)]">
+        {/* Direct Contact Card */}
+        <div className="card-surface p-8 sm:p-12 mb-12 rv">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-10 border-b border-white/[0.08]">
+            {/* Direct Email */}
             <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-[var(--mute)] block mb-2">
+              <span className="font-mono text-xs uppercase tracking-wider text-[#c084fc] font-semibold block mb-2">
                 DIRECT INBOX
               </span>
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center gap-3">
                 <a
                   href={`mailto:${PROFILE.email}`}
-                  className="text-2xl sm:text-4xl font-bold tracking-tight text-[var(--ink)] hover:underline decoration-2 underline-offset-8"
+                  className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white hover:text-[#c084fc] transition-colors break-all"
                 >
                   {PROFILE.email}
                 </a>
-
-                {/* Copy Chip */}
                 <button
                   onClick={handleCopyEmail}
-                  className={`px-3 py-1.5 rounded-full text-xs font-mono font-medium border transition-all duration-200 ${
-                    copied
-                      ? 'bg-[var(--ink)] text-white border-[var(--ink)]'
-                      : 'border-[var(--line)] bg-[var(--paper)] text-[var(--ink-2)] hover:border-[var(--ink)]'
-                  }`}
+                  className="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium border border-white/15 bg-white/[0.05] text-white/80 hover:border-white/40 hover:text-white transition-colors"
                   aria-live="polite"
                 >
                   {copied ? 'Copied ✓' : 'Copy'}
@@ -109,22 +84,32 @@ export function Contact() {
               </div>
             </div>
 
+            {/* Direct Phone / WhatsApp */}
             <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-[var(--mute)] block mb-2">
+              <span className="font-mono text-xs uppercase tracking-wider text-[#c084fc] font-semibold block mb-2">
                 PHONE (CALL / WHATSAPP)
               </span>
               <a
                 href={PROFILE.phoneHref}
-                className="text-xl sm:text-2xl font-mono font-semibold text-[var(--ink)] hover:underline"
+                className="text-2xl sm:text-3xl font-mono font-bold text-white hover:text-[#c084fc] transition-colors block"
               >
                 {PROFILE.phone}
               </a>
+              <span className="font-mono text-xs text-white/40 mt-1 block">
+                Based in {PROFILE.location}
+              </span>
             </div>
           </div>
 
-          {/* Social Links Row strictly from resume */}
+          {/* Social Links Row */}
           <div className="pt-8 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={`mailto:${PROFILE.email}`}
+                className="btn-pill-primary text-xs"
+              >
+                Email Directly ↗
+              </a>
               <a
                 href={PROFILE.github}
                 target="_blank"
@@ -152,34 +137,17 @@ export function Contact() {
               <a
                 href={PROFILE.resumePath}
                 download="Shivam_Chaudhary_Resume.pdf"
-                className="btn-pill-primary text-xs"
+                className="px-4 py-2.5 rounded-full text-xs font-mono font-medium tracking-wider text-white/70 hover:text-white border border-white/15 hover:border-white/40 transition-colors"
               >
                 Download Résumé ↓
               </a>
             </div>
 
-            <div className="font-mono text-xs text-[var(--mute)]">
-              Based in {PROFILE.location}
+            <div className="font-mono text-xs text-white/40">
+              Open for immediate engineering roles
             </div>
           </div>
         </div>
-
-        {/* Footer */}
-        <footer className="pt-8 border-t border-[var(--line)] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[var(--mute)]">
-          <div>
-            © {new Date().getFullYear()} {PROFILE.name}. All details from résumé.
-          </div>
-
-          <div className="flex items-center gap-6">
-            <span>Built with Next.js &amp; React</span>
-            <button
-              onClick={() => scrollToTarget('hero')}
-              className="text-[var(--ink)] hover:underline font-semibold"
-            >
-              Back to top ↑
-            </button>
-          </div>
-        </footer>
       </div>
 
       <style jsx>{`

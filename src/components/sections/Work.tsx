@@ -30,7 +30,7 @@ export function Work() {
                   key={project.id}
                   onClick={() => setActiveProject(project.id)}
                   onFocus={() => setActiveProject(project.id)}
-                  className="flex-[1] min-w-[80px] max-w-[96px] card-surface py-8 px-4 flex flex-col justify-between items-center transition-all duration-500 ease-[var(--ease)] hover:bg-white group cursor-pointer"
+                  className="flex-[1] min-w-[80px] max-w-[96px] card-surface py-8 px-4 flex flex-col justify-between items-center transition-all duration-500 ease-[var(--ease)] hover:bg-white/[0.06] group cursor-pointer"
                   aria-label={`Open ${project.title}`}
                 >
                   <span className="font-mono text-xs font-semibold text-[var(--mute)]">

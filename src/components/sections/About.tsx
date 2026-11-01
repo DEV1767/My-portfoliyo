@@ -161,79 +161,79 @@ export function About() {
                   }}
                 >
                   {/* FRONT SIDE */}
-                  <div className="absolute inset-0 w-full h-full rounded-[24px] bg-white border border-[var(--line)] shadow-xl p-5 flex flex-col justify-between [backface-visibility:hidden]">
+                  <div className="absolute inset-0 w-full h-full rounded-[24px] bg-[#0e0f18] border border-white/10 shadow-2xl p-5 flex flex-col justify-between [backface-visibility:hidden]">
                     {/* Top Punch Hole */}
-                    <div className="w-10 h-2 bg-[#d8d6d2] rounded-full mx-auto -mt-2 mb-2 border border-black/10 shadow-inner" />
+                    <div className="w-10 h-2 bg-black/40 rounded-full mx-auto -mt-2 mb-2 border border-white/10 shadow-inner" />
 
-                    {/* Black Top Band */}
-                    <div className="bg-[var(--ink)] text-white text-center py-1.5 rounded-lg">
+                    {/* Gradient Top Band */}
+                    <div className="bg-gradient-to-r from-[#ff2a5f] to-[#8b5cf6] text-white text-center py-1.5 rounded-lg shadow-[0_2px_12px_rgba(139,92,246,0.3)]">
                       <span className="font-mono text-[10px] font-bold tracking-[0.2em] uppercase">
                         DEVELOPER ID
                       </span>
                     </div>
 
-                    {/* Portrait Photo with gray gradient ring */}
+                    {/* Portrait Photo with glowing gradient ring */}
                     <div className="my-auto flex flex-col items-center">
-                      <div className="relative w-[128px] h-[156px] rounded-xl p-[2px] bg-gradient-to-b from-[#d0cec8] to-[#f4f2ee] shadow-md group-hover:scale-[1.03] transition-transform duration-400 ease-[var(--ease)] overflow-hidden">
-                        <div className="relative w-full h-full rounded-[10px] overflow-hidden bg-white">
+                      <div className="relative w-[128px] h-[156px] rounded-xl p-[2px] bg-gradient-to-b from-[#8b5cf6]/40 via-white/10 to-[#ff2a5f]/40 shadow-lg group-hover:scale-[1.03] transition-transform duration-400 ease-[var(--ease)] overflow-hidden">
+                        <div className="relative w-full h-full rounded-[10px] overflow-hidden bg-[#060608]">
                           <Image
-                            src="/portrait-bust.webp"
+                            src="/shivam.jpg"
                             alt="Shivam Chaudhary Developer Portrait"
                             fill
-                            className="object-cover"
+                            className="object-cover object-[center_35%]"
                             sizes="128px"
                           />
                         </div>
                       </div>
 
                       <div className="mt-3 text-center">
-                        <div className="font-bold text-sm text-[var(--ink)] tracking-tight">
+                        <div className="font-bold text-sm text-white tracking-tight">
                           {PROFILE.name}
                         </div>
-                        <div className="font-mono text-[11px] text-[var(--mute)]">
+                        <div className="font-mono text-[11px] text-[#c084fc]">
                           {PROFILE.role}
                         </div>
                       </div>
                     </div>
 
                     {/* Metadata Rows */}
-                    <div className="space-y-1 font-mono text-[10px] border-t border-b border-[var(--line)] py-2 text-[var(--ink-2)]">
+                    <div className="space-y-1 font-mono text-[10px] border-t border-b border-white/[0.08] py-2 text-white/80">
                       <div className="flex justify-between">
-                        <span className="text-[var(--mute)]">ID NO.</span>
-                        <span className="font-semibold">{PROFILE.idNumber}</span>
+                        <span className="text-white/40">ID NO.</span>
+                        <span className="font-semibold text-white">{PROFILE.idNumber}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-[var(--mute)]">DEPT.</span>
-                        <span className="font-semibold">{PROFILE.dept}</span>
+                        <span className="text-white/40">DEPT.</span>
+                        <span className="font-semibold text-white">{PROFILE.dept}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-[var(--mute)]">VALID TILL</span>
-                        <span className="font-semibold">{PROFILE.validTill}</span>
+                        <span className="text-white/40">VALID TILL</span>
+                        <span className="font-semibold text-white">{PROFILE.validTill}</span>
                       </div>
                     </div>
 
                     {/* Bottom: Barcode and Hologram Sticker */}
                     <div className="flex items-center justify-between pt-1">
-                      {/* Barcode Simulation */}
-                      <div className="flex items-end gap-[2px] h-6 opacity-75">
-                        <span className="w-[1px] h-6 bg-black inline-block" />
-                        <span className="w-[3px] h-6 bg-black inline-block" />
-                        <span className="w-[2px] h-6 bg-black inline-block" />
-                        <span className="w-[1px] h-6 bg-black inline-block" />
-                        <span className="w-[4px] h-6 bg-black inline-block" />
-                        <span className="w-[1px] h-6 bg-black inline-block" />
-                        <span className="w-[2px] h-6 bg-black inline-block" />
-                        <span className="w-[3px] h-6 bg-black inline-block" />
-                        <span className="w-[1px] h-6 bg-black inline-block" />
-                        <span className="w-[2px] h-6 bg-black inline-block" />
-                        <span className="w-[4px] h-6 bg-black inline-block" />
-                        <span className="w-[1px] h-6 bg-black inline-block" />
-                        <span className="w-[3px] h-6 bg-black inline-block" />
+                      {/* Barcode Simulation in crisp white/light gray */}
+                      <div className="flex items-end gap-[2px] h-6 opacity-70">
+                        <span className="w-[1px] h-6 bg-white inline-block" />
+                        <span className="w-[3px] h-6 bg-white inline-block" />
+                        <span className="w-[2px] h-6 bg-white inline-block" />
+                        <span className="w-[1px] h-6 bg-white inline-block" />
+                        <span className="w-[4px] h-6 bg-white inline-block" />
+                        <span className="w-[1px] h-6 bg-white inline-block" />
+                        <span className="w-[2px] h-6 bg-white inline-block" />
+                        <span className="w-[3px] h-6 bg-white inline-block" />
+                        <span className="w-[1px] h-6 bg-white inline-block" />
+                        <span className="w-[2px] h-6 bg-white inline-block" />
+                        <span className="w-[4px] h-6 bg-white inline-block" />
+                        <span className="w-[1px] h-6 bg-white inline-block" />
+                        <span className="w-[3px] h-6 bg-white inline-block" />
                       </div>
 
-                      {/* Holographic grayscale metallic sticker */}
-                      <div className="w-8 h-8 rounded-full border border-black/15 bg-gradient-to-tr from-[#cfcfcf] via-[#ffffff] to-[#a8a8a8] shadow-inner flex items-center justify-center">
-                        <span className="font-mono text-[9px] font-bold text-black/50">
+                      {/* Holographic neon sticker */}
+                      <div className="w-8 h-8 rounded-full border border-white/20 bg-gradient-to-tr from-[#8b5cf6] via-[#c084fc] to-[#ff2a5f] shadow-lg flex items-center justify-center">
+                        <span className="font-mono text-[9px] font-bold text-white">
                           SC
                         </span>
                       </div>
@@ -241,44 +241,44 @@ export function About() {
                   </div>
 
                   {/* BACK SIDE */}
-                  <div className="absolute inset-0 w-full h-full rounded-[24px] bg-white border border-[var(--line)] shadow-xl p-6 flex flex-col justify-between [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <div className="absolute inset-0 w-full h-full rounded-[24px] bg-[#0e0f18] border border-white/10 shadow-2xl p-6 flex flex-col justify-between [transform:rotateY(180deg)] [backface-visibility:hidden]">
                     {/* Top Punch Hole */}
-                    <div className="w-10 h-2 bg-[#d8d6d2] rounded-full mx-auto -mt-2 mb-2 border border-black/10 shadow-inner" />
+                    <div className="w-10 h-2 bg-black/40 rounded-full mx-auto -mt-2 mb-2 border border-white/10 shadow-inner" />
 
                     <div>
-                      <div className="font-mono text-[10px] font-bold tracking-widest text-[var(--mute)] uppercase mb-3 pb-1 border-b border-[var(--line)]">
+                      <div className="font-mono text-[10px] font-bold tracking-widest text-[#8b5cf6] uppercase mb-3 pb-1 border-b border-white/[0.08]">
                         WHAT I AM
                       </div>
 
-                      <div className="space-y-2.5 text-xs text-[var(--ink-2)]">
+                      <div className="space-y-2.5 text-xs text-white/80">
                         <div>
-                          <span className="text-[var(--mute)] block text-[10px] font-mono">ROLE</span>
-                          <span className="font-semibold text-[var(--ink)]">Backend Developer · Generative AI &amp; Agentic AI</span>
+                          <span className="text-white/40 block text-[10px] font-mono">ROLE</span>
+                          <span className="font-semibold text-white">Backend Developer · Generative AI &amp; Agentic AI</span>
                         </div>
                         <div>
-                          <span className="text-[var(--mute)] block text-[10px] font-mono">EDUCATION</span>
-                          <span className="font-semibold text-[var(--ink)]">B.E. AI &amp; ML — JNNCE (2024–Present)</span>
+                          <span className="text-white/40 block text-[10px] font-mono">EDUCATION</span>
+                          <span className="font-semibold text-white">B.E. AI &amp; ML — JNNCE (2024–Present)</span>
                         </div>
                         <div>
-                          <span className="text-[var(--mute)] block text-[10px] font-mono">PRIMARY STACK</span>
-                          <span className="font-semibold text-[var(--ink)]">LangGraph, LangChain, Hybrid RAG, Node.js, FastAPI</span>
+                          <span className="text-white/40 block text-[10px] font-mono">PRIMARY STACK</span>
+                          <span className="font-semibold text-white">LangGraph, LangChain, Hybrid RAG, Node.js, FastAPI</span>
                         </div>
                         <div>
-                          <span className="text-[var(--mute)] block text-[10px] font-mono">KEY WORKS</span>
-                          <span className="font-semibold text-[var(--ink)]">Git RAG Assistant, AI Commander VS Code Agent, EventHub</span>
+                          <span className="text-white/40 block text-[10px] font-mono">KEY WORKS</span>
+                          <span className="font-semibold text-white">Git RAG Assistant, AI Commander VS Code Agent, EventHub</span>
                         </div>
                         <div>
-                          <span className="text-[var(--mute)] block text-[10px] font-mono">HONOURS</span>
-                          <span className="font-semibold text-[var(--ink)]">1st Place, TCS Hackathon · 2nd Place, Mysterio 6.0</span>
+                          <span className="text-white/40 block text-[10px] font-mono">HONOURS</span>
+                          <span className="font-semibold text-white">1st Place, TCS Hackathon · 2nd Place, Mysterio 6.0</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="border-t border-[var(--line)] pt-3">
-                      <div className="font-serif italic text-sm text-[var(--mute)] mb-1">
+                    <div className="border-t border-white/[0.08] pt-3">
+                      <div className="font-sans font-bold text-sm text-[#ff2a5f] mb-1">
                         Shivam Chaudhary
                       </div>
-                      <div className="font-mono text-[9px] text-[var(--faint)]">
+                      <div className="font-mono text-[9px] text-white/40">
                         If found, say hello · {PROFILE.email}
                       </div>
                     </div>

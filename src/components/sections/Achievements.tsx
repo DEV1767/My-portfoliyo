@@ -79,8 +79,8 @@ export function Achievements() {
             </p>
           </div>
 
-          <div className="flex items-center gap-2 font-mono text-xs text-[var(--mute)] bg-white/70 backdrop-blur-sm border border-[var(--line)] px-4 py-2 rounded-full self-start md:self-auto">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <div className="flex items-center gap-2 font-mono text-xs text-white/70 bg-white/[0.04] backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full self-start md:self-auto shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>{ACHIEVEMENTS.length} Benchmarks · Hackathons &amp; Accolades</span>
           </div>
         </div>
@@ -102,7 +102,7 @@ export function Achievements() {
 
                   <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end">
                     {card.badge && (
-                      <span className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold py-1 px-2.5 rounded-full bg-amber-500/10 text-amber-800 border border-amber-500/30">
+                      <span className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold py-1 px-2.5 rounded-full bg-[#ff2a5f]/15 text-[#ff5277] border border-[#ff2a5f]/30">
                         {card.badge}
                       </span>
                     )}
@@ -111,7 +111,7 @@ export function Achievements() {
                         href={card.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 font-mono text-xs text-[var(--mute)] hover:text-[var(--ink)] transition-colors py-1 px-2.5 rounded-full border border-[var(--line)] hover:border-[var(--ink)]/40"
+                        className="inline-flex items-center gap-1 font-mono text-xs text-white/60 hover:text-white transition-colors py-1 px-2.5 rounded-full border border-white/10 hover:border-white/30"
                         aria-label={`Open ${card.platform} profile`}
                       >
                         Profile ↗
@@ -171,16 +171,16 @@ export function Achievements() {
         </div>
 
         {/* Continuous Progress Footer Banner */}
-        <div className="mt-10 sm:mt-12 rounded-2xl border border-dashed border-[var(--line)] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white/40">
+        <div className="mt-10 sm:mt-12 rounded-2xl border border-dashed border-white/10 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white/[0.02]">
           <div className="flex items-center gap-3">
-            <span className="font-mono text-[11px] uppercase tracking-widest text-[var(--mute)] bg-[var(--paper)] px-3 py-1 rounded-full border border-[var(--line)]">
+            <span className="font-mono text-[11px] uppercase tracking-widest text-[#c084fc] bg-[#8b5cf6]/10 px-3 py-1 rounded-full border border-[#8b5cf6]/30">
               CONTINUOUS PROGRESS
             </span>
-            <span className="font-serif italic text-xl text-[var(--ink)]">
+            <span className="font-sans font-bold text-xl text-white">
               and counting →
             </span>
           </div>
-          <p className="font-mono text-xs text-[var(--mute)] max-w-md sm:text-right">
+          <p className="font-mono text-xs text-white/50 max-w-md sm:text-right">
             Actively engineering new RAG pipelines, autonomous agents, and algorithmic problem-solving daily.
           </p>
         </div>

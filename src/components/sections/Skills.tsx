@@ -44,8 +44,8 @@ export function Skills() {
                   onClick={() => handleFamilySelect(family)}
                   className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-200 ${
                     isSelected
-                      ? 'bg-[var(--ink)] text-white shadow-sm'
-                      : 'bg-white/80 border border-[var(--line)] text-[var(--ink-2)] hover:border-[var(--ink)]'
+                      ? 'bg-gradient-to-r from-[#ff2a5f] to-[#8b5cf6] text-white shadow-[0_0_15px_rgba(139,92,246,0.35)]'
+                      : 'bg-white/[0.04] border border-white/10 text-white/70 hover:border-white/30 hover:text-white'
                   }`}
                 >
                   {family}
@@ -74,12 +74,12 @@ export function Skills() {
                   onFocus={() => setActiveSkill(skill)}
                   className={`relative p-2.5 sm:p-3 aspect-square rounded-2xl flex flex-col justify-between text-left transition-all duration-300 ease-[var(--ease)] ${
                     matchesFilter
-                      ? 'opacity-100 scale-100 bg-white'
-                      : 'opacity-20 scale-[0.97] pointer-events-none bg-white/40'
+                      ? 'opacity-100 scale-100 bg-[#0e0f18]/90'
+                      : 'opacity-20 scale-[0.97] pointer-events-none bg-white/[0.02]'
                   } ${
                     isSelected
-                      ? 'ring-2 ring-[var(--ink)] shadow-md -translate-y-1'
-                      : 'border border-[var(--line)] hover:border-[var(--ink-2)] hover:-translate-y-0.5'
+                      ? 'ring-2 ring-[#8b5cf6] border border-transparent shadow-[0_0_20px_rgba(139,92,246,0.35)] -translate-y-1'
+                      : 'border border-white/[0.08] hover:border-white/20 hover:-translate-y-0.5'
                   }`}
                   style={{
                     animationDelay: `${delay}ms`,

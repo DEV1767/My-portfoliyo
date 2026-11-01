@@ -26,7 +26,7 @@ export function Navigation() {
       cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(() => {
         const y = window.scrollY;
-        setScrolled(y > 40);
+        setScrolled(y > 30);
 
         const docH = document.documentElement.scrollHeight - window.innerHeight;
         const p = docH > 0 ? Math.min(1, Math.max(0, y / docH)) : 0;
@@ -43,7 +43,7 @@ export function Navigation() {
     };
   }, []);
 
-  // Track active section via IntersectionObserver with rootMargin: -45% 0px -50% 0px
+  // Track active section via IntersectionObserver
   useEffect(() => {
     const sectionIds = ['hero', ...NAV.map((n) => n.id)];
     const observers: IntersectionObserver[] = [];
@@ -62,7 +62,7 @@ export function Navigation() {
             }
           });
         },
-        { rootMargin: '-45% 0px -50% 0px' }
+        { rootMargin: '-40% 0px -50% 0px' }
       );
 
       obs.observe(el);
@@ -115,56 +115,41 @@ export function Navigation() {
 
   return (
     <>
-      {/* 2px ink scroll-progress bar running along the very top */}
+      {/* Glowing scroll-progress line running along the very top */}
       <div
-        className="fixed top-0 left-0 h-[2px] bg-[var(--ink)] z-[100] transition-transform duration-75 pointer-events-none origin-left"
+        className="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-[#ff2a5f] to-[#8b5cf6] z-[100] transition-transform duration-75 pointer-events-none origin-left shadow-[0_0_12px_rgba(255,42,95,0.8)]"
         style={{ width: '100%', transform: `scaleX(${scrollProgress})` }}
         aria-hidden="true"
       />
 
       {/* Main navigation header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ease-[var(--ease)] ${
-          scrolled ? 'py-3' : 'py-6 md:py-8'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[var(--ease)] ${
+          scrolled
+            ? 'py-3.5 bg-[#060608]/85 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.6)]'
+            : 'py-6 md:py-8 bg-transparent border-b border-transparent'
         }`}
       >
         <div className="section-container flex items-center justify-between">
-          {/* Left: Initials mark + full name */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => scrollToTarget('hero')}
-              className={`w-10 h-10 rounded-full flex items-center justify-center font-mono text-xs font-semibold tracking-wider transition-all duration-500 ease-[var(--ease)] group ${
-                scrolled
-                  ? 'bg-[var(--ink)] text-[var(--paper)] shadow-md'
-                  : 'border border-[var(--ink)] text-[var(--ink)] bg-transparent'
-              }`}
-              aria-label="Back to top"
-            >
-              <span className="transition-transform duration-500 ease-[var(--ease)] group-hover:rotate-[360deg] inline-block">
-                SC
-              </span>
-            </button>
-
-            <span
-              className={`font-semibold tracking-tight text-sm md:text-base hidden sm:inline-block transition-all duration-400 ease-[var(--ease)] ${
-                scrolled ? 'opacity-0 -translate-x-3 pointer-events-none' : 'opacity-100 translate-x-0'
-              }`}
-            >
+          {/* Left: Minimalist Logo A. / S. style */}
+          <button
+            onClick={() => scrollToTarget('hero')}
+            className="flex items-center gap-2 text-2xl font-bold tracking-tight text-white group"
+            aria-label="Back to top"
+          >
+            <span className="font-sans font-extrabold text-2xl">
+              S<span className="text-[#ff2a5f] group-hover:text-[#c084fc] transition-colors">.</span>
+            </span>
+            <span className="hidden sm:inline-block text-xs font-mono font-medium text-white/40 tracking-widest pl-2 uppercase border-l border-white/10">
               {PROFILE.name}
             </span>
-          </div>
+          </button>
 
-          {/* Centre/Right: Desktop Nav links pill */}
-          <nav
-            className={`hidden md:flex items-center p-1.5 rounded-full transition-all duration-400 ease-[var(--ease)] relative ${
-              scrolled
-                ? 'bg-white/80 backdrop-blur-md border border-[var(--line)] shadow-lg shadow-black/[0.03]'
-                : 'bg-transparent border border-transparent'
-            }`}
-          >
-            {/* Sliding ink indicator pill */}
+          {/* Centre: Desktop Nav links pill */}
+          <nav className="hidden md:flex items-center p-1 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-md relative">
+            {/* Sliding glow indicator */}
             <div
-              className="absolute top-1.5 bottom-1.5 bg-[var(--ink)] rounded-full transition-all duration-300 ease-[var(--ease)] pointer-events-none"
+              className="absolute top-1 bottom-1 bg-white/[0.08] border border-white/10 rounded-full transition-all duration-300 ease-[var(--ease)] pointer-events-none"
               style={{
                 left: `${indicatorStyle.left}px`,
                 width: `${indicatorStyle.width}px`,
@@ -181,8 +166,8 @@ export function Navigation() {
                     navLinksRef.current[idx] = el;
                   }}
                   onClick={() => handleNavClick(item.id)}
-                  className={`relative z-10 px-4 py-2 text-xs md:text-sm font-medium tracking-tight rounded-full transition-colors duration-200 ${
-                    isActive ? 'text-white' : 'text-[var(--ink-2)] hover:text-[var(--ink)]'
+                  className={`relative z-10 px-4 py-1.5 text-xs font-medium tracking-wide rounded-full transition-colors duration-200 ${
+                    isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'
                   }`}
                 >
                   {item.label}
@@ -191,40 +176,43 @@ export function Navigation() {
             })}
           </nav>
 
-          {/* Mobile Menu Pill */}
+          {/* Right Action: Let's Talk button */}
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={() => handleNavClick('contact')}
+              className="px-4 py-2 rounded-full text-xs font-mono font-semibold tracking-wider uppercase border border-[#8b5cf6]/50 bg-[#8b5cf6]/10 text-white hover:bg-[#8b5cf6]/20 hover:border-[#8b5cf6] hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-200"
+            >
+              Let&apos;s Talk ↗
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setMobileOpen(true)}
-              className={`px-4 py-2 rounded-full text-xs font-mono font-medium tracking-wider uppercase transition-all duration-300 ${
-                scrolled
-                  ? 'bg-white/80 backdrop-blur-md border border-[var(--line)] shadow-sm'
-                  : 'border border-[var(--line)] bg-[var(--card)]'
-              }`}
+              className="w-10 h-10 rounded-full flex items-center justify-center text-xl text-white bg-white/[0.05] border border-white/10 active:scale-95 transition-transform"
               aria-label="Open navigation menu"
             >
-              Menu
+              ☰
             </button>
           </div>
         </div>
       </header>
 
-      {/* Full-screen mobile paper overlay */}
+      {/* Full-screen dark mobile overlay */}
       <div
-        className={`fixed inset-0 z-[90] bg-[var(--paper)] flex flex-col justify-between p-8 md:hidden transition-all duration-500 ease-[var(--ease)] ${
+        className={`fixed inset-0 z-[90] bg-[#060608]/95 backdrop-blur-2xl flex flex-col justify-between p-8 md:hidden transition-all duration-400 ease-[var(--ease)] ${
           mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
-        style={{
-          clipPath: mobileOpen ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' : 'polygon(0 0, 100% 0, 100% 0, 0 0)',
-        }}
         aria-hidden={!mobileOpen}
       >
         <div className="flex items-center justify-between">
-          <div className="w-10 h-10 rounded-full border border-[var(--ink)] flex items-center justify-center font-mono text-xs font-semibold">
-            SC
-          </div>
+          <span className="font-extrabold text-2xl text-white">
+            S<span className="text-[#ff2a5f]">.</span>
+          </span>
           <button
             onClick={() => setMobileOpen(false)}
-            className="w-10 h-10 rounded-full border border-[var(--line)] flex items-center justify-center text-lg"
+            className="w-10 h-10 rounded-full border border-white/10 text-white flex items-center justify-center text-lg bg-white/[0.05]"
             aria-label="Close menu"
           >
             ✕
@@ -238,19 +226,25 @@ export function Navigation() {
               onClick={() => handleNavClick(item.id)}
               className="group flex items-baseline gap-4 text-left transition-transform duration-300 hover:translate-x-2"
               style={{
-                transitionDelay: `${idx * 50}ms`,
+                transitionDelay: `${idx * 40}ms`,
               }}
             >
-              <span className="font-mono text-xs text-[var(--mute)]">{item.index} —</span>
-              <span className="text-3xl font-bold tracking-tight text-[var(--ink)] group-hover:text-[var(--mute)] transition-colors">
+              <span className="font-mono text-xs text-[#8b5cf6]">{item.index} —</span>
+              <span className="text-3xl font-bold tracking-tight text-white group-hover:text-[#c084fc] transition-colors">
                 {item.label}
               </span>
             </button>
           ))}
+          <button
+            onClick={() => handleNavClick('contact')}
+            className="mt-4 px-6 py-3 rounded-full text-center font-mono text-xs uppercase tracking-widest font-bold bg-gradient-to-r from-[#ff2a5f] to-[#8b5cf6] text-white shadow-lg shadow-[#8b5cf6]/30"
+          >
+            Let&apos;s Talk ↗
+          </button>
         </nav>
 
-        <div className="pt-6 border-t border-[var(--line)] flex flex-col gap-2 font-mono text-xs text-[var(--mute)]">
-          <div className="text-[var(--ink)] font-semibold">{PROFILE.email}</div>
+        <div className="pt-6 border-t border-white/10 flex flex-col gap-2 font-mono text-xs text-white/50">
+          <div className="text-white font-semibold">{PROFILE.email}</div>
           <div>{PROFILE.location}</div>
         </div>
       </div>

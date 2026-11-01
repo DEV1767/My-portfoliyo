@@ -88,13 +88,13 @@ export function Experience() {
         <div className="relative max-w-4xl mx-auto pl-6 sm:pl-10">
           {/* Vertical Spine Base */}
           <div
-            className="absolute left-[11px] sm:left-[19px] top-0 bottom-0 w-[2px] bg-[var(--line)]"
+            className="absolute left-[11px] sm:left-[19px] top-0 bottom-0 w-[2px] bg-white/[0.08]"
             aria-hidden="true"
           />
 
           {/* Vertical Spine Drawn by Scroll Progress */}
           <div
-            className="absolute left-[11px] sm:left-[19px] top-0 w-[2px] bg-[var(--ink)] origin-top transition-transform duration-75 pointer-events-none"
+            className="absolute left-[11px] sm:left-[19px] top-0 w-[2px] bg-gradient-to-b from-[#ff2a5f] to-[#8b5cf6] shadow-[0_0_10px_rgba(139,92,246,0.6)] origin-top transition-transform duration-75 pointer-events-none"
             style={{
               height: '100%',
               transform: `scaleY(${Math.min(1, Math.max(0, scrollProgress * 1.15))})`,
@@ -115,8 +115,8 @@ export function Experience() {
                     <div
                       className={`w-6 h-6 rounded-full flex items-center justify-center -ml-[35px] sm:-ml-[43px] z-10 transition-all duration-300 ${
                         isLit
-                          ? 'bg-[var(--ink)] text-white shadow-md'
-                          : 'bg-white border-2 border-dashed border-[var(--mute)] text-[var(--mute)]'
+                          ? 'bg-[#8b5cf6] text-white shadow-[0_0_15px_#8b5cf6]'
+                          : 'bg-[#0e0f18] border-2 border-dashed border-white/20 text-white/40'
                       }`}
                     >
                       <span className="w-2 h-2 rounded-full bg-current" />
@@ -126,26 +126,26 @@ export function Experience() {
                     <div
                       className={`flex-1 p-8 rounded-[26px] border-2 border-dashed transition-all duration-400 ${
                         isLit
-                          ? 'border-[var(--ink)] bg-white shadow-md'
-                          : 'border-[var(--line)] bg-transparent hover:border-[var(--mute)]'
+                          ? 'border-[#8b5cf6] bg-[#0e0f18]/90 shadow-[0_0_30px_rgba(139,92,246,0.2)]'
+                          : 'border-white/10 bg-transparent hover:border-white/30'
                       }`}
                     >
-                      <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-[var(--mute)] mb-2">
-                        <span className="px-2.5 py-0.5 rounded-full bg-[var(--soft)] text-[var(--ink)] font-semibold">
+                      <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-white/50 mb-2">
+                        <span className="px-2.5 py-0.5 rounded-full bg-[#8b5cf6]/20 text-[#c084fc] font-semibold border border-[#8b5cf6]/30">
                           NEXT STEP
                         </span>
                         <span>{stop.period}</span>
                       </div>
 
-                      <h3 className="text-2xl font-bold tracking-tight text-[var(--ink)] mb-2">
+                      <h3 className="text-2xl font-bold tracking-tight text-white mb-2">
                         Next — {stop.title}
                       </h3>
-                      <p className="font-mono text-xs text-[var(--mute)] mb-4">{stop.place}</p>
+                      <p className="font-mono text-xs text-white/50 mb-4">{stop.place}</p>
 
-                      <div className="space-y-1.5 text-sm text-[var(--ink-2)] mb-6">
+                      <div className="space-y-1.5 text-sm text-white/80 mb-6">
                         {stop.details.map((d, i) => (
                           <div key={i} className="flex items-start gap-2">
-                            <span className="font-mono text-[var(--ink)]">•</span>
+                            <span className="font-mono text-[#ff2a5f]">•</span>
                             <span>{d}</span>
                           </div>
                         ))}
@@ -168,8 +168,8 @@ export function Experience() {
                   <div
                     className={`w-6 h-6 rounded-full flex items-center justify-center -ml-[35px] sm:-ml-[43px] z-10 transition-all duration-300 ${
                       isLit
-                        ? 'bg-[var(--ink)] ring-4 ring-black/10'
-                        : 'bg-white border-2 border-[var(--line)]'
+                        ? 'bg-[#8b5cf6] ring-4 ring-[#8b5cf6]/20 shadow-[0_0_12px_#8b5cf6]'
+                        : 'bg-[#0e0f18] border-2 border-white/20'
                     }`}
                   >
                     <span
@@ -182,30 +182,30 @@ export function Experience() {
                   {/* Stop Card */}
                   <div
                     className={`flex-1 card-surface p-6 sm:p-8 transition-all duration-400 ${
-                      isLit ? 'border-l-4 border-l-[var(--ink)]' : 'border-l-4 border-l-transparent'
+                      isLit ? 'border-l-4 border-l-[#8b5cf6] shadow-[0_0_25px_rgba(139,92,246,0.15)]' : 'border-l-4 border-l-transparent'
                     }`}
                   >
                     {/* Meta line: Year badge, Category, Period */}
-                    <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-[var(--mute)] mb-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-white/50 mb-2">
                       <div className="flex items-center gap-2">
-                        <span className="px-2.5 py-0.5 rounded-full bg-[var(--ink)] text-white font-semibold">
+                        <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-white font-semibold">
                           {stop.year}
                         </span>
-                        <span className="uppercase tracking-wider">{stop.category}</span>
+                        <span className="uppercase tracking-wider text-[#c084fc]">{stop.category}</span>
                       </div>
                       <span>{stop.period}</span>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[var(--ink)] mb-1">
+                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-1">
                       {stop.title}
                     </h3>
-                    <p className="font-mono text-xs text-[var(--mute)] mb-4">{stop.place}</p>
+                    <p className="font-mono text-xs text-white/50 mb-4">{stop.place}</p>
 
                     {/* Bullets */}
-                    <div className="space-y-2 text-sm text-[var(--ink-2)] mb-4">
+                    <div className="space-y-2 text-sm text-white/80 mb-4">
                       {stop.details.map((d, i) => (
                         <div key={i} className="flex items-start gap-2 leading-relaxed">
-                          <span className="font-mono text-[var(--ink)] mt-0.5">•</span>
+                          <span className="font-mono text-[#ff2a5f] mt-0.5">•</span>
                           <span>{d}</span>
                         </div>
                       ))}
@@ -213,11 +213,11 @@ export function Experience() {
 
                     {/* Tech stack tags */}
                     {stop.stack && (
-                      <div className="flex flex-wrap gap-1.5 pt-3 border-t border-[var(--line)]">
+                      <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/[0.08]">
                         {stop.stack.map((s) => (
                           <span
                             key={s}
-                            className="px-2 py-0.5 rounded text-xs font-mono bg-[var(--paper)] text-[var(--mute)]"
+                            className="px-2 py-0.5 rounded text-xs font-mono bg-white/[0.05] text-white/60 border border-white/10"
                           >
                             {s}
                           </span>
