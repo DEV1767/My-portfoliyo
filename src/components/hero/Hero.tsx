@@ -66,10 +66,11 @@ export function Hero() {
 
             <a
               href={PROFILE.resumePath}
-              download="Shivam_Chaudhary_Resume.pdf"
-              className="px-5 py-3 rounded-full text-xs font-mono font-medium tracking-wider text-white/60 hover:text-white border border-white/[0.08] hover:border-white/25 transition-all"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-3 rounded-full text-xs font-mono font-medium tracking-wider text-white/70 hover:text-white border border-white/[0.08] hover:border-white/25 transition-all inline-flex items-center gap-1.5"
             >
-              Résumé ↓
+              Résumé ↗
             </a>
           </div>
 

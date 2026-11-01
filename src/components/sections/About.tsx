@@ -96,10 +96,11 @@ export function About() {
             <div className="flex flex-wrap items-center gap-3 pt-6 border-t border-[var(--line)]">
               <a
                 href={PROFILE.resumePath}
-                download="Shivam_Chaudhary_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-pill-primary text-xs"
               >
-                Résumé ↓
+                View Résumé ↗
               </a>
               <a
                 href={PROFILE.github}

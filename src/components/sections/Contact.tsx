@@ -136,10 +136,11 @@ export function Contact() {
               </a>
               <a
                 href={PROFILE.resumePath}
-                download="Shivam_Chaudhary_Resume.pdf"
-                className="px-4 py-2.5 rounded-full text-xs font-mono font-medium tracking-wider text-white/70 hover:text-white border border-white/15 hover:border-white/40 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2.5 rounded-full text-xs font-mono font-medium tracking-wider text-white/70 hover:text-white border border-white/15 hover:border-white/40 transition-colors inline-flex items-center gap-1.5"
               >
-                Download Résumé ↓
+                View Résumé ↗
               </a>
             </div>
 
